@@ -188,7 +188,7 @@ void readT(NarrowBand *narrBand, myfloat *Tnb, myfloat *kP, myfloat *prob_h, myf
 {
 
     //read planck-absorption coefficient
-    FILE *fp = fopen("tables/particles/planck-mean.txt","r");
+    FILE *fp = fopen("../distr/tables/particles/planck-mean.txt","r");
     for(int i=0; i<nT; i++)
     {
  	   fscanf(fp,readf" "reade"\n",&Tnb[i],&kP[i]);
@@ -200,6 +200,7 @@ void readT(NarrowBand *narrBand, myfloat *Tnb, myfloat *kP, myfloat *prob_h, myf
     *kappamax = (kP[t+1] - kP[t])/(Tnb[t+1]-Tnb[t])*
    	   	   	   (Tmax - Tnb[t])+kP[t];
 
+    myfloat dummy;
     //read tables of narrow-bands and probability
     char *file[nB];
     for (int i=0; i<nB; i++)
@@ -207,11 +208,11 @@ void readT(NarrowBand *narrBand, myfloat *Tnb, myfloat *kP, myfloat *prob_h, myf
       	   file[i] = (char*)malloc(68*sizeof(char));
  	   sprintf(file[i],"../distr/tables/particles/NarrBand%d.txt",i);
  	   fp = fopen(file[i],"r");
- 	   fscanf(fp,reade"\t"reade"\t"reade"\n",&dummy,&dummy,&narrBand[i].wvc,narrband[i].kq[0][0]);
-	   for (int j=0; j<nT; j++)
-                 for(int g=0; g<nQ, g++)           
-                     narrBand[i].kq[j][g] = narrBand[i].kq[0][0];
-																			                           }
+ 	   fscanf(fp,reade"\t"reade"\t"reade"\t"reade"\n",&dummy,&dummy,&narrBand[i].wvc,&narrBand[i].kq[0][0]);
+	   for (int j=0; j<nT; j++) 
+  		   for(int g=0; g<nQ; g++)            
+                     narrBand[i].kq[j][g] = narrBand[i].kq[0][0]; 
+    
  	   fclose(fp);
  	   narrBand[i].idx = i;
     }
@@ -230,7 +231,7 @@ void readT(NarrowBand *narrBand, myfloat *Tnb, myfloat *kP, myfloat *prob_h, myf
 
  		   for (int g=0; g<nQ; g++)
  		   {
- 			   probg_h[m] = 1;
+ 			   probg_h[m] = g;
  	 		   m += 1;
  		   }
  		   fscanf(fp,"\n");

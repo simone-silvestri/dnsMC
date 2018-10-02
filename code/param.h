@@ -46,7 +46,7 @@ const int maxs[] = {5, 5, 5, 5, 5, 100000};
 //sorting or not sorting the narrow bands (1 -> yes, other int -> no)
 #define srt 1
 //Spectral radiation models (0 -> nbcK (fluid), 1 -> grey, 2 -> nb (particles))
-#define grey 1 
+#define grey 2 
 //Angular distribution (0 -> Uniform, other int -> Sobol)
 #define sobol 1
 // 1 -> double precision, 0 -> single precision

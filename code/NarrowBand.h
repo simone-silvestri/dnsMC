@@ -86,5 +86,7 @@
 #define nT 52 
 #define nQ 1
 #define nB 119
+#undef srt
+#define srt 0
 
 #endif

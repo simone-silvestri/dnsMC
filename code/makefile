@@ -43,4 +43,4 @@ fix_var.o : fix_var.f
 decomp_2d.o: decomp_2d.f90 
 	$(COMP)  -DDOUBLE_PREC -DOVERWRITE -O3  -cpp  -c decomp_2d.f90 io.f90
 clean:
-	rm *.o *.mod
+	rm -rf *.o *.mod
