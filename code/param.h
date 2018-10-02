@@ -47,6 +47,8 @@ const int maxs[] = {5, 5, 5, 5, 5, 100000};
 #define srt 1
 //grey radiation (1 -> yes, other int -> no)
 #define grey 0 
+//Angular distribution (0 -> Uniform, other int -> Sobol)
+#define sobol 1
 // 1 -> double precision, 0 -> single precision
 #define floatingpoint 0
 

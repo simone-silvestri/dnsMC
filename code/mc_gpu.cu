@@ -41,7 +41,7 @@ cudaTextureObject_t *tex_d[num_gpu];
 cudaTextureObject_t *tex_prob_d[num_gpu];
 
 
-__global__ void kernel_fluid(Gridn *my_grid, myfloat *wvc_d, myfloat *Tnb_t, int n, int ns, int stream, myfloat kappamax, myfloat Tmax, int *idx_nb,
+__global__ void kernel_fluid(curandDirectionVectors32_t *rngVectors, Gridn *my_grid, myfloat *wvc_d, myfloat *Tnb_t, int n, int ns, int stream, myfloat kappamax, myfloat Tmax, int *idx_nb,
 		cudaTextureObject_t *tex_Tf, cudaTextureObject_t *tex, cudaTextureObject_t *tex_prob,
 		int gpu, int ystart, EmissSpec *Ibw)
 {
@@ -66,11 +66,20 @@ __global__ void kernel_fluid(Gridn *my_grid, myfloat *wvc_d, myfloat *Tnb_t, int
 	//define a narrow band
 	myfloat wvc;
 	__shared__ curandState_t state[blockdim];
+#if sobol!=0
+	curandStateSobol32_t state1, state2;
+#endif
+
 	// this is basically the loop over the indices in the CPU.
 	// the indices are found in relation with the stream-block-Thread design.
 	// this is a grid-stride loop, hence every thread will do multiple cells
 	for (int idx = tid; idx < n; idx += blockDim.x * gridDim.x)
 	{
+
+#if sobol!=0
+	        curand_init(rngVectors[0],0,&state1);
+	        curand_init(rngVectors[1],0,&state2);
+#endif
 		solution[stream][idx] = 0;
 		ray.i = (idx / (kmax*jmax/num_gpu/p_row) + 1) + (stream)*imax/ns;
 		ray.j = (idx / (kmax/num_gpu) + 1 - (ray.i-1-(stream)*imax/ns)*jmax/p_row);
@@ -108,7 +117,12 @@ __global__ void kernel_fluid(Gridn *my_grid, myfloat *wvc_d, myfloat *Tnb_t, int
 				int flag[3];
 				// Now we have to deal with random numbers, selecting the angles
 				// define the scattering function
-				emiss_ang(&ray, &state[tx]);
+#if sobol!=0
+	                        emiss_angSobol(&ray, &state1, &state2);
+#else
+	                        emiss_ang(&ray, &state[tx]);
+#endif
+
 
 				if(ray.sx == 0)
 					ray.sx = 1e-10;
@@ -576,6 +590,14 @@ extern "C" void mc_gpu_(myfloatF *Tfort, int *ystart)
 		cudaMemcpyToSymbol(probd, prob_h2 , nB*2*sizeof(myfloat) ,0,cudaMemcpyHostToDevice);
 		cudaCheckErrors("Malloc fail");
 
+		curandDirectionVectors32_t *d_rngVectors;
+	        cudaMalloc((void **)&d_rngVectors, 2 * sizeof(curandDirectionVectors32_t));
+#if sobol!=0
+	        curandDirectionVectors32_t *rngDirections;
+	        curandGetDirectionVectors32(&rngDirections, CURAND_DIRECTION_VECTORS_32_JOEKUO6);
+	        cudaMemcpy(d_rngVectors, rngDirections, 2*sizeof(curandDirectionVectors32_t), cudaMemcpyHostToDevice);
+#endif
+
 		/**************************************************************/
 		/***********  STARTING CUDA ROUTINES **************************/
 		/**************************************************************/
@@ -590,11 +612,11 @@ extern "C" void mc_gpu_(myfloatF *Tfort, int *ystart)
 		{
 			if(gpu==0) {
 				// launch one worker kernel per stream
-				kernel_fluid<<<nblocks, blockdim, 0, streams0[i]>>>(gridGPU[gpu], wvc_d[gpu], Tnb_d[gpu], N, num_streams, i, kappamax, Tmax, idx_d[gpu],
+				kernel_fluid<<<nblocks, blockdim, 0, streams0[i]>>>(d_rngVectors, gridGPU[gpu], wvc_d[gpu], Tnb_d[gpu], N, num_streams, i, kappamax, Tmax, idx_d[gpu],
 						tex_tempf_d[gpu], tex_d[gpu], tex_prob_d[gpu], gpu, *ystart, Ibw_d[gpu]);
 			}
 			else {
-				kernel_fluid<<<nblocks, blockdim, 0, streams1[i]>>>(gridGPU[gpu], wvc_d[gpu], Tnb_d[gpu], N, num_streams, i, kappamax, Tmax, idx_d[gpu],
+				kernel_fluid<<<nblocks, blockdim, 0, streams1[i]>>>(d_rngVectors, gridGPU[gpu], wvc_d[gpu], Tnb_d[gpu], N, num_streams, i, kappamax, Tmax, idx_d[gpu],
 						tex_tempf_d[gpu], tex_d[gpu], tex_prob_d[gpu], gpu, *ystart, Ibw_d[gpu]);
 			}
 		}
@@ -796,6 +818,15 @@ __device__ __forceinline__ void emiss_ang(Beam *ray, curandState_t *state)
 	ray->sy = __sinf(theta)*__cosf(phi);
 	ray->sz = __sinf(theta)*__sinf(phi);
 }
+__device__ __forceinline__ void emiss_angSobol(Beam *ray, curandStateSobol32_t *state1, curandStateSobol32_t *state2)
+{
+        myfloat phi   = curand_uniform(state1)*2*pi;
+        myfloat theta = acosf( 1 - 2*curand_uniform(state2) );
+        ray->sx = __cosf(theta);
+        ray->sy = __sinf(theta)*__cosf(phi);
+        ray->sz = __sinf(theta)*__sinf(phi);
+}
+
 __device__ __forceinline__ void find_band(myfloat *Tnb, myfloat Tmax, int *g, int *nb, curandState_t *state, int tm, cudaTextureObject_t *tex_prob)
 {
 

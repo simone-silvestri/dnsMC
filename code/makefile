@@ -11,7 +11,7 @@ MAT = -ftz=true -prec-div=false
 # linking libraries and includes for heterogeneous cuda-fortran programming
 CUDA = /usr/local/cuda-8.0
 INC = -I$(CUDA)/include
-LIB = -L$(CUDA)/lib64 -lcudart -lc -lstdc++ #-lcuda
+LIB = -L$(CUDA)/lib64 -lcudart -lc -lstdc++ -lcurand #-lcuda
 
 LIBD =   libacml.a
 COMP  = mpif90 -132 -r8

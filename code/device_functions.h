@@ -8,11 +8,11 @@
 #ifndef DEVICE_FUNCTIONS_H_
 #define DEVICE_FUNCTIONS_H_
 
-__global__ void kernel_fluid(Gridn *my_grid, myfloat *wvc_d, myfloat *Tnb_t, myfloat *var,
+__global__ void kernel_fluid(curandDirectionVectors32_t *rngVectors, Gridn *my_grid, myfloat *wvc_d, myfloat *Tnb_t, myfloat *var,
 					   myfloat *device, int n, int ns, int stream, myfloat kappamax, myfloat Tmax, int *idx_nb,
 					   cudaTextureObject_t *tex_Tf, cudaTextureObject_t *tex, cudaTextureObject_t *tex_prob,
 					   int gpu, int ystart, EmissSpec *Ibw);
-
+__device__ __forceinline__  void emiss_angSobol(Beam *ray, curandStateSobol32_t *state, curandStateSobol32_t *state2);
 __device__ __forceinline__  void emiss_ang(Beam *ray, curandState_t *state);
 __device__ __forceinline__ void wave_find(int *nb, int *g, int *countnb, int *countg, int *idx_nb, Count *cnt);
 __device__ __forceinline__ void find_band(myfloat *Tnb, myfloat Tmax, int *g, int *nb, curandState_t *state, int tm, cudaTextureObject_t *tex_prob);
