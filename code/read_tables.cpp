@@ -205,36 +205,39 @@ void readT(NarrowBand *narrBand, myfloat *Tnb, myfloat *kP, myfloat *prob_h, myf
     for (int i=0; i<nB; i++)
     {
       	   file[i] = (char*)malloc(68*sizeof(char));
- 	   sprintf(file[i],"../distr/tables/NarrBand%d.txt",i);
+ 	   sprintf(file[i],"../distr/tables/particles/NarrBand%d.txt",i);
  	   fp = fopen(file[i],"r");
- 	   fscanf(fp,reade"\t"reade"\t"reade"\n",&dummy,&dummy,&narrBand[i].wvc);
+ 	   fscanf(fp,reade"\t"reade"\t"reade"\n",&dummy,&dummy,&narrBand[i].wvc,narrband[i].kq[0][0]);
+	   for (int j=0; j<nT; j++)
+                 for(int g=0; g<nQ, g++)           
+                     narrBand[i].kq[j][g] = narrBand[i].kq[0][0];
+																			                           }
  	   fclose(fp);
  	   narrBand[i].idx = i;
     }
 
-        //write down probability table CK
-        fp = fopen("tables/particles/prob.txt","wt");
-        for (int i=0; i<nT; i++)
-        {
-                for (int j=0; j<particles->totbands; j++)
-                {
-                        fprintf(fp,"%lf \t %-5d \t%30.20le \n",particles->T[i],j,particles->narr_abs[j].cuprob[i]);
-                }
-        }       
-        fclose(fp);
+    int dummy3;
+    fp = fopen("../distr/tables/particles/prob.txt","r");
+    int n=0;
+    int m=0;
+    for (int i=0; i<nT; i++)
+    {
+ 	   for (int j=0; j<nB; j++)
+ 	   {
+ 		   fscanf(fp,readf" \t %d \t "reade" \t",&dummy,&dummy3,&prob[i][j]);
+ 		   prob_h[n] = prob[i][j];
+ 		   n += 1;
 
-
-        //write down tables of nb-kq;
-        for (int j=0; j < particles->totbands; j++)
-                sprintf(particles->narr_abs[j].file,"tables/particles/NarrBand%d.txt",j);
-                
-        for (int j=0; j < particles->totbands; j++)
-        {
-                fp = fopen(particles->narr_abs[j].file,"wt");
-                fprintf(fp,"%le\t%le\t%le\t%le\t%le \n",particles->narr_abs[j].wv_left,particles->narr_abs[j].wv_right,particles->narr_abs[j].wvc,
-                                                                          particles->narr_abs[j].k_avg,  particles->narr_abs[j].k_avg);
-                fclose(fp);                                               
-        }       
+ 		   for (int g=0; g<nQ; g++)
+ 		   {
+ 			   probg_h[m] = 1;
+ 	 		   m += 1;
+ 		   }
+ 		   fscanf(fp,"\n");
+ 	   }
+    }
+    fclose(fp);
+}
 
 
 #endif

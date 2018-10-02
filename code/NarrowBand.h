@@ -5,7 +5,6 @@
 #define nT 52 
 #define nQ 16
 #define nB 119
-#define nS 2002
 
 #if nQ==100
 	static const myfloat gq[nQ] = { 0.000140, 0.000739, 0.001816, 0.003370, 0.005400, 0.007904, 0.010879, 0.014322,
@@ -76,7 +75,6 @@
 #define nT 55 
 #define nQ 1 
 #define nB 1000
-#define nS 2002
 #define abscoeff 1.f
 #define Tmins 500.f
 #define wvmax 15000.f
@@ -84,5 +82,9 @@
 #define srt 0
 
 #elif grey==2 //If we want particle tables
+
+#define nT 52 
+#define nQ 1
+#define nB 119
 
 #endif
