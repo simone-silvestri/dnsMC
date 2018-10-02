@@ -70,14 +70,19 @@
 	static const myfloat gq[nQ] ={ 0.00000 ,0.15541 ,0.45000 ,0.74459 ,0.90000 ,0.93551 ,0.98449};
 	static const myfloat wq[nQ] = {0.04500,0.24500,0.32000,0.24500,0.05611,0.05125,0.03764};
 #endif
-#else
+
+#elif grey==1   // If we want grey tables
+
 #define nT 55 
 #define nQ 1 
 #define nB 1000
 #define nS 2002
 #define abscoeff 1.f
-#define Tmins 570.f
+#define Tmins 500.f
 #define wvmax 15000.f
 #undef srt
 #define srt 0
+
+#elif grey==2 //If we want particle tables
+
 #endif
