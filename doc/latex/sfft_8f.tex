@@ -1,0 +1,208 @@
+\hypertarget{sfft_8f}{}\section{code/sfft.f File Reference}
+\label{sfft_8f}\index{code/sfft.\+f@{code/sfft.\+f}}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{sfft_8f_a3274082ab31b5f843d75b9e8e1e654e6}{four1} (n, a, da, dx)
+\item 
+subroutine \hyperlink{sfft_8f_ac1d50a4cb97554dc32c9c293a8ec3558}{four12} (n, a, da, dda, dx)
+\item 
+subroutine \hyperlink{sfft_8f_a5f93a60e103ea341eb2a9178a4914bf5}{four1r} (n, itr, a, da, dx)
+\item 
+subroutine \hyperlink{sfft_8f_adf0e24e539f85736a86372829a8cb19e}{four2} (n, a, dda, dx)
+\item 
+subroutine \hyperlink{sfft_8f_aaaebfce61bc0b8ffaddcadfb2d679458}{four2r} (n, itr, a, dda, dx)
+\item 
+function \hyperlink{sfft_8f_ad86cceddf7c0c034a76379b21163024e}{pimach} ()
+\item 
+subroutine \hyperlink{sfft_8f_a50cb81e98209534944c5c916df2eea93}{vradb2} (MP, I\+DO, L1, CC, CH, M\+D\+I\+MC, W\+A1)
+\item 
+subroutine \hyperlink{sfft_8f_a369ffff45441a6f6cee162a47056786f}{vradb3} (MP, I\+DO, L1, CC, CH, M\+D\+I\+MC, W\+A1, W\+A2)
+\item 
+subroutine \hyperlink{sfft_8f_a19331a52326efa3912dfc83154027fdb}{vradb4} (MP, I\+DO, L1, CC, CH, M\+D\+I\+MC, W\+A1, W\+A2, W\+A3)
+\item 
+subroutine \hyperlink{sfft_8f_a28be0d946044b62f3b112bc9189d39c4}{vradb5} (MP, I\+DO, L1, CC, CH, M\+D\+I\+MC, W\+A1, W\+A2, W\+A3, W\+A4)
+\item 
+subroutine \hyperlink{sfft_8f_aacbf9c8d49a2bab31f765ae928ddd167}{vradbg} (MP, I\+DO, IP, L1, I\+D\+L1, CC, C1, C2, CH, C\+H2, M\+D\+I\+MC, WA)
+\item 
+subroutine \hyperlink{sfft_8f_a69a51bb30027a4f9516a780a1c8a01be}{vradf2} (MP, I\+DO, L1, CC, CH, M\+D\+I\+MC, W\+A1)
+\item 
+subroutine \hyperlink{sfft_8f_a65e357e8ef1818d89c8a5fc8f9f680ac}{vradf3} (MP, I\+DO, L1, CC, CH, M\+D\+I\+MC, W\+A1, W\+A2)
+\item 
+subroutine \hyperlink{sfft_8f_a806321a80ed418620c4860fc17ce72e0}{vradf4} (MP, I\+DO, L1, CC, CH, M\+D\+I\+MC, W\+A1, W\+A2, W\+A3)
+\item 
+subroutine \hyperlink{sfft_8f_a0aec689c9487c752ec61e9d3692b2c12}{vradf5} (MP, I\+DO, L1, CC, CH, M\+D\+I\+MC, W\+A1, W\+A2, W\+A3, W\+A4)
+\item 
+subroutine \hyperlink{sfft_8f_a986cb0f6dcbd2acd1e2a4e9ef22d67c2}{vradfg} (MP, I\+DO, IP, L1, I\+D\+L1, CC, C1, C2, CH, C\+H2, M\+D\+I\+MC, WA)
+\item 
+subroutine \hyperlink{sfft_8f_a3d6b11e474dd9bb984ac4054ddab2c34}{vrfftb} (M, \hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N}, R, RT, M\+D\+I\+MR, W\+S\+A\+VE)
+\item 
+subroutine \hyperlink{sfft_8f_a12a99635a0a55f46d7332f7edf41fecb}{vrfftf} (M, \hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N}, R, RT, M\+D\+I\+MR, W\+S\+A\+VE)
+\item 
+subroutine \hyperlink{sfft_8f_a5c99760521da8176c787bb9c97496a52}{vrffti} (\hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N}, W\+S\+A\+VE)
+\item 
+subroutine \hyperlink{sfft_8f_a67a1e9e0f31cb6a7c668c544acd5ed81}{vrftb1} (M, \hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N}, C, CH, M\+D\+I\+MC, WA, F\+AC)
+\item 
+subroutine \hyperlink{sfft_8f_a7da099aef7dae58a938aa6ddc20fb28d}{vrftf1} (M, \hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N}, C, CH, M\+D\+I\+MC, WA, F\+AC)
+\item 
+subroutine \hyperlink{sfft_8f_a48b013eedb6ac3aa95d12d241e2787e3}{vrfti1} (\hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N}, WA, F\+AC)
+\item 
+subroutine \hyperlink{sfft_8f_a793beaf15d43aba14940d2e3dc11ba2b}{cnvstr} (ing, cha)
+\item 
+subroutine \hyperlink{sfft_8f_afc408da45c97e3807dba8a6454fc374c}{cn} (inte, ch)
+\item 
+subroutine \hyperlink{sfft_8f_a4a0181d25fb290774bee46dec85265ff}{trid} (MR, A, B, C, Y, D)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{sfft_8f_afc408da45c97e3807dba8a6454fc374c}\label{sfft_8f_afc408da45c97e3807dba8a6454fc374c}} 
+\index{sfft.\+f@{sfft.\+f}!cn@{cn}}
+\index{cn@{cn}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{cn()}{cn()}}
+{\footnotesize\ttfamily subroutine cn (\begin{DoxyParamCaption}\item[{integer}]{inte,  }\item[{character}]{ch }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a793beaf15d43aba14940d2e3dc11ba2b}\label{sfft_8f_a793beaf15d43aba14940d2e3dc11ba2b}} 
+\index{sfft.\+f@{sfft.\+f}!cnvstr@{cnvstr}}
+\index{cnvstr@{cnvstr}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{cnvstr()}{cnvstr()}}
+{\footnotesize\ttfamily subroutine cnvstr (\begin{DoxyParamCaption}\item[{integer}]{ing,  }\item[{character$\ast$5}]{cha }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a3274082ab31b5f843d75b9e8e1e654e6}\label{sfft_8f_a3274082ab31b5f843d75b9e8e1e654e6}} 
+\index{sfft.\+f@{sfft.\+f}!four1@{four1}}
+\index{four1@{four1}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{four1()}{four1()}}
+{\footnotesize\ttfamily subroutine four1 (\begin{DoxyParamCaption}\item[{integer}]{n,  }\item[{real, dimension(n)}]{a,  }\item[{real, dimension(n)}]{da,  }\item[{real}]{dx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_ac1d50a4cb97554dc32c9c293a8ec3558}\label{sfft_8f_ac1d50a4cb97554dc32c9c293a8ec3558}} 
+\index{sfft.\+f@{sfft.\+f}!four12@{four12}}
+\index{four12@{four12}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{four12()}{four12()}}
+{\footnotesize\ttfamily subroutine four12 (\begin{DoxyParamCaption}\item[{integer}]{n,  }\item[{real, dimension(n)}]{a,  }\item[{real, dimension(n)}]{da,  }\item[{real, dimension(n)}]{dda,  }\item[{real}]{dx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a5f93a60e103ea341eb2a9178a4914bf5}\label{sfft_8f_a5f93a60e103ea341eb2a9178a4914bf5}} 
+\index{sfft.\+f@{sfft.\+f}!four1r@{four1r}}
+\index{four1r@{four1r}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{four1r()}{four1r()}}
+{\footnotesize\ttfamily subroutine four1r (\begin{DoxyParamCaption}\item[{integer}]{n,  }\item[{integer}]{itr,  }\item[{real, dimension(n)}]{a,  }\item[{real, dimension(n)}]{da,  }\item[{real}]{dx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_adf0e24e539f85736a86372829a8cb19e}\label{sfft_8f_adf0e24e539f85736a86372829a8cb19e}} 
+\index{sfft.\+f@{sfft.\+f}!four2@{four2}}
+\index{four2@{four2}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{four2()}{four2()}}
+{\footnotesize\ttfamily subroutine four2 (\begin{DoxyParamCaption}\item[{integer}]{n,  }\item[{real, dimension(n)}]{a,  }\item[{real, dimension(n)}]{dda,  }\item[{}]{dx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_aaaebfce61bc0b8ffaddcadfb2d679458}\label{sfft_8f_aaaebfce61bc0b8ffaddcadfb2d679458}} 
+\index{sfft.\+f@{sfft.\+f}!four2r@{four2r}}
+\index{four2r@{four2r}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{four2r()}{four2r()}}
+{\footnotesize\ttfamily subroutine four2r (\begin{DoxyParamCaption}\item[{integer}]{n,  }\item[{integer}]{itr,  }\item[{real, dimension(n)}]{a,  }\item[{real, dimension(n)}]{dda,  }\item[{}]{dx }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_ad86cceddf7c0c034a76379b21163024e}\label{sfft_8f_ad86cceddf7c0c034a76379b21163024e}} 
+\index{sfft.\+f@{sfft.\+f}!pimach@{pimach}}
+\index{pimach@{pimach}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{pimach()}{pimach()}}
+{\footnotesize\ttfamily function pimach (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a4a0181d25fb290774bee46dec85265ff}\label{sfft_8f_a4a0181d25fb290774bee46dec85265ff}} 
+\index{sfft.\+f@{sfft.\+f}!trid@{trid}}
+\index{trid@{trid}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{trid()}{trid()}}
+{\footnotesize\ttfamily subroutine trid (\begin{DoxyParamCaption}\item[{}]{MR,  }\item[{dimension(1)}]{A,  }\item[{dimension(1)}]{B,  }\item[{dimension(1)}]{C,  }\item[{dimension(1)}]{Y,  }\item[{dimension(1)}]{D }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a50cb81e98209534944c5c916df2eea93}\label{sfft_8f_a50cb81e98209534944c5c916df2eea93}} 
+\index{sfft.\+f@{sfft.\+f}!vradb2@{vradb2}}
+\index{vradb2@{vradb2}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vradb2()}{vradb2()}}
+{\footnotesize\ttfamily subroutine vradb2 (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{I\+DO,  }\item[{}]{L1,  }\item[{dimension(mdimc,ido,2,l1)}]{CC,  }\item[{dimension(mdimc,ido,l1,2)}]{CH,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(ido)}]{W\+A1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a369ffff45441a6f6cee162a47056786f}\label{sfft_8f_a369ffff45441a6f6cee162a47056786f}} 
+\index{sfft.\+f@{sfft.\+f}!vradb3@{vradb3}}
+\index{vradb3@{vradb3}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vradb3()}{vradb3()}}
+{\footnotesize\ttfamily subroutine vradb3 (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{I\+DO,  }\item[{}]{L1,  }\item[{dimension(mdimc,ido,3,l1)}]{CC,  }\item[{dimension(mdimc,ido,l1,3)}]{CH,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(ido)}]{W\+A1,  }\item[{dimension(ido)}]{W\+A2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a19331a52326efa3912dfc83154027fdb}\label{sfft_8f_a19331a52326efa3912dfc83154027fdb}} 
+\index{sfft.\+f@{sfft.\+f}!vradb4@{vradb4}}
+\index{vradb4@{vradb4}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vradb4()}{vradb4()}}
+{\footnotesize\ttfamily subroutine vradb4 (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{I\+DO,  }\item[{}]{L1,  }\item[{dimension(mdimc,ido,4,l1)}]{CC,  }\item[{dimension(mdimc,ido,l1,4)}]{CH,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(ido)}]{W\+A1,  }\item[{dimension(ido)}]{W\+A2,  }\item[{dimension(ido)}]{W\+A3 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a28be0d946044b62f3b112bc9189d39c4}\label{sfft_8f_a28be0d946044b62f3b112bc9189d39c4}} 
+\index{sfft.\+f@{sfft.\+f}!vradb5@{vradb5}}
+\index{vradb5@{vradb5}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vradb5()}{vradb5()}}
+{\footnotesize\ttfamily subroutine vradb5 (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{I\+DO,  }\item[{}]{L1,  }\item[{dimension(mdimc,ido,5,l1)}]{CC,  }\item[{dimension(mdimc,ido,l1,5)}]{CH,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(ido)}]{W\+A1,  }\item[{dimension(ido)}]{W\+A2,  }\item[{dimension(ido)}]{W\+A3,  }\item[{dimension(ido)}]{W\+A4 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_aacbf9c8d49a2bab31f765ae928ddd167}\label{sfft_8f_aacbf9c8d49a2bab31f765ae928ddd167}} 
+\index{sfft.\+f@{sfft.\+f}!vradbg@{vradbg}}
+\index{vradbg@{vradbg}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vradbg()}{vradbg()}}
+{\footnotesize\ttfamily subroutine vradbg (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{I\+DO,  }\item[{}]{IP,  }\item[{}]{L1,  }\item[{}]{I\+D\+L1,  }\item[{dimension(mdimc,ido,ip,l1)}]{CC,  }\item[{dimension(mdimc,ido,l1,ip)}]{C1,  }\item[{dimension(mdimc,idl1,ip)}]{C2,  }\item[{dimension(mdimc,ido,l1,ip)}]{CH,  }\item[{dimension(mdimc,idl1,ip)}]{C\+H2,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(ido)}]{WA }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a69a51bb30027a4f9516a780a1c8a01be}\label{sfft_8f_a69a51bb30027a4f9516a780a1c8a01be}} 
+\index{sfft.\+f@{sfft.\+f}!vradf2@{vradf2}}
+\index{vradf2@{vradf2}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vradf2()}{vradf2()}}
+{\footnotesize\ttfamily subroutine vradf2 (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{I\+DO,  }\item[{}]{L1,  }\item[{dimension(mdimc,ido,l1,2)}]{CC,  }\item[{dimension(mdimc,ido,2,l1)}]{CH,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(ido)}]{W\+A1 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a65e357e8ef1818d89c8a5fc8f9f680ac}\label{sfft_8f_a65e357e8ef1818d89c8a5fc8f9f680ac}} 
+\index{sfft.\+f@{sfft.\+f}!vradf3@{vradf3}}
+\index{vradf3@{vradf3}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vradf3()}{vradf3()}}
+{\footnotesize\ttfamily subroutine vradf3 (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{I\+DO,  }\item[{}]{L1,  }\item[{dimension(mdimc,ido,l1,3)}]{CC,  }\item[{dimension(mdimc,ido,3,l1)}]{CH,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(ido)}]{W\+A1,  }\item[{dimension(ido)}]{W\+A2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a806321a80ed418620c4860fc17ce72e0}\label{sfft_8f_a806321a80ed418620c4860fc17ce72e0}} 
+\index{sfft.\+f@{sfft.\+f}!vradf4@{vradf4}}
+\index{vradf4@{vradf4}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vradf4()}{vradf4()}}
+{\footnotesize\ttfamily subroutine vradf4 (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{I\+DO,  }\item[{}]{L1,  }\item[{dimension(mdimc,ido,l1,4)}]{CC,  }\item[{dimension(mdimc,ido,4,l1)}]{CH,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(ido)}]{W\+A1,  }\item[{dimension(ido)}]{W\+A2,  }\item[{dimension(ido)}]{W\+A3 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a0aec689c9487c752ec61e9d3692b2c12}\label{sfft_8f_a0aec689c9487c752ec61e9d3692b2c12}} 
+\index{sfft.\+f@{sfft.\+f}!vradf5@{vradf5}}
+\index{vradf5@{vradf5}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vradf5()}{vradf5()}}
+{\footnotesize\ttfamily subroutine vradf5 (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{I\+DO,  }\item[{}]{L1,  }\item[{dimension(mdimc,ido,l1,5)}]{CC,  }\item[{dimension(mdimc,ido,5,l1)}]{CH,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(ido)}]{W\+A1,  }\item[{dimension(ido)}]{W\+A2,  }\item[{dimension(ido)}]{W\+A3,  }\item[{dimension(ido)}]{W\+A4 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a986cb0f6dcbd2acd1e2a4e9ef22d67c2}\label{sfft_8f_a986cb0f6dcbd2acd1e2a4e9ef22d67c2}} 
+\index{sfft.\+f@{sfft.\+f}!vradfg@{vradfg}}
+\index{vradfg@{vradfg}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vradfg()}{vradfg()}}
+{\footnotesize\ttfamily subroutine vradfg (\begin{DoxyParamCaption}\item[{}]{MP,  }\item[{}]{I\+DO,  }\item[{}]{IP,  }\item[{}]{L1,  }\item[{}]{I\+D\+L1,  }\item[{dimension(mdimc,ido,ip,l1)}]{CC,  }\item[{dimension(mdimc,ido,l1,ip)}]{C1,  }\item[{dimension(mdimc,idl1,ip)}]{C2,  }\item[{dimension(mdimc,ido,l1,ip)}]{CH,  }\item[{dimension(mdimc,idl1,ip)}]{C\+H2,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(ido)}]{WA }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a3d6b11e474dd9bb984ac4054ddab2c34}\label{sfft_8f_a3d6b11e474dd9bb984ac4054ddab2c34}} 
+\index{sfft.\+f@{sfft.\+f}!vrfftb@{vrfftb}}
+\index{vrfftb@{vrfftb}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vrfftb()}{vrfftb()}}
+{\footnotesize\ttfamily subroutine vrfftb (\begin{DoxyParamCaption}\item[{}]{M,  }\item[{}]{N,  }\item[{dimension(mdimr,n)}]{R,  }\item[{dimension(mdimr,n)}]{RT,  }\item[{}]{M\+D\+I\+MR,  }\item[{dimension(n+15)}]{W\+S\+A\+VE }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a12a99635a0a55f46d7332f7edf41fecb}\label{sfft_8f_a12a99635a0a55f46d7332f7edf41fecb}} 
+\index{sfft.\+f@{sfft.\+f}!vrfftf@{vrfftf}}
+\index{vrfftf@{vrfftf}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vrfftf()}{vrfftf()}}
+{\footnotesize\ttfamily subroutine vrfftf (\begin{DoxyParamCaption}\item[{}]{M,  }\item[{}]{N,  }\item[{dimension(mdimr,n)}]{R,  }\item[{dimension(mdimr,n)}]{RT,  }\item[{}]{M\+D\+I\+MR,  }\item[{dimension(n+15)}]{W\+S\+A\+VE }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a5c99760521da8176c787bb9c97496a52}\label{sfft_8f_a5c99760521da8176c787bb9c97496a52}} 
+\index{sfft.\+f@{sfft.\+f}!vrffti@{vrffti}}
+\index{vrffti@{vrffti}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vrffti()}{vrffti()}}
+{\footnotesize\ttfamily subroutine vrffti (\begin{DoxyParamCaption}\item[{}]{N,  }\item[{dimension(n+15)}]{W\+S\+A\+VE }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a67a1e9e0f31cb6a7c668c544acd5ed81}\label{sfft_8f_a67a1e9e0f31cb6a7c668c544acd5ed81}} 
+\index{sfft.\+f@{sfft.\+f}!vrftb1@{vrftb1}}
+\index{vrftb1@{vrftb1}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vrftb1()}{vrftb1()}}
+{\footnotesize\ttfamily subroutine vrftb1 (\begin{DoxyParamCaption}\item[{}]{M,  }\item[{}]{N,  }\item[{dimension(mdimc,n)}]{C,  }\item[{dimension(mdimc,n)}]{CH,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(n)}]{WA,  }\item[{dimension(15)}]{F\+AC }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a7da099aef7dae58a938aa6ddc20fb28d}\label{sfft_8f_a7da099aef7dae58a938aa6ddc20fb28d}} 
+\index{sfft.\+f@{sfft.\+f}!vrftf1@{vrftf1}}
+\index{vrftf1@{vrftf1}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vrftf1()}{vrftf1()}}
+{\footnotesize\ttfamily subroutine vrftf1 (\begin{DoxyParamCaption}\item[{}]{M,  }\item[{}]{N,  }\item[{dimension(mdimc,n)}]{C,  }\item[{dimension(mdimc,n)}]{CH,  }\item[{}]{M\+D\+I\+MC,  }\item[{dimension(n)}]{WA,  }\item[{dimension(15)}]{F\+AC }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sfft_8f_a48b013eedb6ac3aa95d12d241e2787e3}\label{sfft_8f_a48b013eedb6ac3aa95d12d241e2787e3}} 
+\index{sfft.\+f@{sfft.\+f}!vrfti1@{vrfti1}}
+\index{vrfti1@{vrfti1}!sfft.\+f@{sfft.\+f}}
+\subsubsection{\texorpdfstring{vrfti1()}{vrfti1()}}
+{\footnotesize\ttfamily subroutine vrfti1 (\begin{DoxyParamCaption}\item[{}]{N,  }\item[{dimension(n)}]{WA,  }\item[{dimension(15)}]{F\+AC }\end{DoxyParamCaption})}
+

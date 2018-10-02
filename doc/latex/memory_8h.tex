@@ -1,0 +1,48 @@
+\hypertarget{memory_8h}{}\section{code/memory.h File Reference}
+\label{memory_8h}\index{code/memory.\+h@{code/memory.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{memory_8h_acdc271da1d0803d8e7c3d0ee14790a9c}{black\+\_\+copy} (\hyperlink{structEmissSpec}{Emiss\+Spec} $\ast$\hyperlink{mc__gpu_8cu_ae0d8a42c87785ba8b4a1792ff67ab599}{Ibw\+\_\+d}, \hyperlink{classNarrowBand}{Narrow\+Band} $\ast$narr\+Band)
+\item 
+void \hyperlink{memory_8h_af1a4a3bb86afa191bf06b8ba47667510}{grid\+\_\+copy} (\hyperlink{classGridn}{Gridn} $\ast$grid\+C\+PU, \hyperlink{classGridn}{Gridn} $\ast$\hyperlink{mc__gpu_8cu_a74de1e808220d77a904a4dd5835cdead}{grid\+G\+PU})
+\item 
+void \hyperlink{memory_8h_ab8890b05006119c09b7bead311bea278}{temp\+\_\+fluid\+\_\+copy} (cuda\+Texture\+Object\+\_\+t $\ast$\hyperlink{mc__gpu_8cu_aff98f241432bdd0d6a9caccb19426859}{tex\+\_\+tempf\+\_\+d}, \hyperlink{classVar__CPU}{Var\+\_\+\+C\+PU} $\ast$var\+C\+PU)
+\item 
+void \hyperlink{memory_8h_a55938cbf68a7b737ce74548717579435}{narrowband\+\_\+copy} (\hyperlink{classNarrowBand}{Narrow\+Band} $\ast$narr\+Band, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$wcv\+\_\+d, int $\ast$\hyperlink{mc__gpu_8cu_a0092894182b745f3aaa00baacf024329}{idx\+\_\+d}, cuda\+Texture\+Object\+\_\+t $\ast$\hyperlink{mc__gpu_8cu_ad5c4d0a58301ccacad07ee3641a693b8}{tex\+\_\+d}, cuda\+Texture\+Object\+\_\+t $\ast$\hyperlink{mc__gpu_8cu_af5760f0df5d9e1fdc7eb6c8ff7ef978d}{tex\+\_\+prob\+\_\+d}, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$\hyperlink{mc__gpu_8cu_a1cf79772104f5b8b803bcbf4c6b5a053}{Tnb\+\_\+d}, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$Tnb)
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{memory_8h_a4377903e1c6e764da89fd87700eb74c3}{I\+\_\+blackC} (\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} T, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} nu)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{memory_8h_acdc271da1d0803d8e7c3d0ee14790a9c}\label{memory_8h_acdc271da1d0803d8e7c3d0ee14790a9c}} 
+\index{memory.\+h@{memory.\+h}!black\+\_\+copy@{black\+\_\+copy}}
+\index{black\+\_\+copy@{black\+\_\+copy}!memory.\+h@{memory.\+h}}
+\subsubsection{\texorpdfstring{black\+\_\+copy()}{black\_copy()}}
+{\footnotesize\ttfamily void black\+\_\+copy (\begin{DoxyParamCaption}\item[{\hyperlink{structEmissSpec}{Emiss\+Spec} $\ast$}]{Ibw\+\_\+d,  }\item[{\hyperlink{classNarrowBand}{Narrow\+Band} $\ast$}]{narr\+Band }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{memory_8h_af1a4a3bb86afa191bf06b8ba47667510}\label{memory_8h_af1a4a3bb86afa191bf06b8ba47667510}} 
+\index{memory.\+h@{memory.\+h}!grid\+\_\+copy@{grid\+\_\+copy}}
+\index{grid\+\_\+copy@{grid\+\_\+copy}!memory.\+h@{memory.\+h}}
+\subsubsection{\texorpdfstring{grid\+\_\+copy()}{grid\_copy()}}
+{\footnotesize\ttfamily void grid\+\_\+copy (\begin{DoxyParamCaption}\item[{\hyperlink{classGridn}{Gridn} $\ast$}]{grid\+C\+PU,  }\item[{\hyperlink{classGridn}{Gridn} $\ast$}]{grid\+G\+PU }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{memory_8h_a4377903e1c6e764da89fd87700eb74c3}\label{memory_8h_a4377903e1c6e764da89fd87700eb74c3}} 
+\index{memory.\+h@{memory.\+h}!I\+\_\+blackC@{I\+\_\+blackC}}
+\index{I\+\_\+blackC@{I\+\_\+blackC}!memory.\+h@{memory.\+h}}
+\subsubsection{\texorpdfstring{I\+\_\+black\+C()}{I\_blackC()}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} I\+\_\+blackC (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{T,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{nu }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{memory_8h_a55938cbf68a7b737ce74548717579435}\label{memory_8h_a55938cbf68a7b737ce74548717579435}} 
+\index{memory.\+h@{memory.\+h}!narrowband\+\_\+copy@{narrowband\+\_\+copy}}
+\index{narrowband\+\_\+copy@{narrowband\+\_\+copy}!memory.\+h@{memory.\+h}}
+\subsubsection{\texorpdfstring{narrowband\+\_\+copy()}{narrowband\_copy()}}
+{\footnotesize\ttfamily void narrowband\+\_\+copy (\begin{DoxyParamCaption}\item[{\hyperlink{classNarrowBand}{Narrow\+Band} $\ast$}]{narr\+Band,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{wcv\+\_\+d,  }\item[{int $\ast$}]{idx\+\_\+d,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+d,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+prob\+\_\+d,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{Tnb\+\_\+d,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{Tnb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{memory_8h_ab8890b05006119c09b7bead311bea278}\label{memory_8h_ab8890b05006119c09b7bead311bea278}} 
+\index{memory.\+h@{memory.\+h}!temp\+\_\+fluid\+\_\+copy@{temp\+\_\+fluid\+\_\+copy}}
+\index{temp\+\_\+fluid\+\_\+copy@{temp\+\_\+fluid\+\_\+copy}!memory.\+h@{memory.\+h}}
+\subsubsection{\texorpdfstring{temp\+\_\+fluid\+\_\+copy()}{temp\_fluid\_copy()}}
+{\footnotesize\ttfamily void temp\+\_\+fluid\+\_\+copy (\begin{DoxyParamCaption}\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+tempf\+\_\+d,  }\item[{\hyperlink{classVar__CPU}{Var\+\_\+\+C\+PU} $\ast$}]{var\+C\+PU }\end{DoxyParamCaption})}
+

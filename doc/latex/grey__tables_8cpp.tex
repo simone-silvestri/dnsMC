@@ -1,0 +1,54 @@
+\hypertarget{grey__tables_8cpp}{}\section{code/grey\+\_\+tables.cpp File Reference}
+\label{grey__tables_8cpp}\index{code/grey\+\_\+tables.\+cpp@{code/grey\+\_\+tables.\+cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}param.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}definitions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{grey__tables_8cpp_a6f7a987323f0845c53f6e36d22bbcb9c}{I\+\_\+black\+C2} (\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} T, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} nu)
+\item 
+void \hyperlink{grey__tables_8cpp_a4859dec39852da6f42f67ff615c58834}{readT} (\hyperlink{classNarrowBand}{Narrow\+Band} $\ast$narr\+Band, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$Tnb, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$\hyperlink{mc__gpu_8cu_ace3a0d571ca64447b29bc9999d23b85e}{kP}, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$prob\+\_\+h, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$probg\+\_\+h, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Tmax, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$kappamax)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{grey__tables_8cpp_a19c66f36e67229ffc84148aa337bc329}{prob} \mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{grey__tables_8cpp_a154b4ee2e5ccbfa05ff4d8df0337f5a3}{probg} \mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_ac207cb86a4c7e5bc1973837ee2339e59}{nQ}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{grey__tables_8cpp_a6f7a987323f0845c53f6e36d22bbcb9c}\label{grey__tables_8cpp_a6f7a987323f0845c53f6e36d22bbcb9c}} 
+\index{grey\+\_\+tables.\+cpp@{grey\+\_\+tables.\+cpp}!I\+\_\+black\+C2@{I\+\_\+black\+C2}}
+\index{I\+\_\+black\+C2@{I\+\_\+black\+C2}!grey\+\_\+tables.\+cpp@{grey\+\_\+tables.\+cpp}}
+\subsubsection{\texorpdfstring{I\+\_\+black\+C2()}{I\_blackC2()}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} I\+\_\+black\+C2 (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{T,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{nu }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{grey__tables_8cpp_a4859dec39852da6f42f67ff615c58834}\label{grey__tables_8cpp_a4859dec39852da6f42f67ff615c58834}} 
+\index{grey\+\_\+tables.\+cpp@{grey\+\_\+tables.\+cpp}!readT@{readT}}
+\index{readT@{readT}!grey\+\_\+tables.\+cpp@{grey\+\_\+tables.\+cpp}}
+\subsubsection{\texorpdfstring{read\+T()}{readT()}}
+{\footnotesize\ttfamily void readT (\begin{DoxyParamCaption}\item[{\hyperlink{classNarrowBand}{Narrow\+Band} $\ast$}]{narr\+Band,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{Tnb,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{kP,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{prob\+\_\+h,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{probg\+\_\+h,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Tmax,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{kappamax }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{grey__tables_8cpp_a19c66f36e67229ffc84148aa337bc329}\label{grey__tables_8cpp_a19c66f36e67229ffc84148aa337bc329}} 
+\index{grey\+\_\+tables.\+cpp@{grey\+\_\+tables.\+cpp}!prob@{prob}}
+\index{prob@{prob}!grey\+\_\+tables.\+cpp@{grey\+\_\+tables.\+cpp}}
+\subsubsection{\texorpdfstring{prob}{prob}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} prob\mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}}
+
+Copyright 1993-\/2012 N\+V\+I\+D\+IA Corporation. All rights reserved.
+
+Please refer to the N\+V\+I\+D\+IA end user license agreement (E\+U\+LA) associated with this source code for terms and conditions that govern your use of this software. Any use, reproduction, disclosure, or distribution of this software and related documentation outside the terms of the E\+U\+LA is strictly prohibited. \mbox{\Hypertarget{grey__tables_8cpp_a154b4ee2e5ccbfa05ff4d8df0337f5a3}\label{grey__tables_8cpp_a154b4ee2e5ccbfa05ff4d8df0337f5a3}} 
+\index{grey\+\_\+tables.\+cpp@{grey\+\_\+tables.\+cpp}!probg@{probg}}
+\index{probg@{probg}!grey\+\_\+tables.\+cpp@{grey\+\_\+tables.\+cpp}}
+\subsubsection{\texorpdfstring{probg}{probg}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} probg\mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_ac207cb86a4c7e5bc1973837ee2339e59}{nQ}\mbox{]}}
+

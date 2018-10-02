@@ -1,0 +1,76 @@
+      real unew(0:i1,jmax/p_row,kmax/p_col)
+      real vnew(0:i1,jmax/p_row,kmax/p_col)
+      real wnew(0:i1,jmax/p_row,kmax/p_col)
+      real cnew(0:i1,jmax/p_row,kmax/p_col)
+      real enew(0:i1,jmax/p_row,kmax/p_col)
+      real renew(0:i1,jmax/p_row,kmax/p_col)
+      real rhonew(0:i1,jmax/p_row,kmax/p_col)
+      real lambdanew(0:i1,jmax/p_row,kmax/p_col)
+      real munew(0:i1,jmax/p_row,kmax/p_col)
+      real rho_star(0:i1,jmax/p_row,kmax/p_col)
+      real rho_o(0:i1,jmax/p_row,kmax/p_col)
+      real rho_oo(0:i1,jmax/p_row,kmax/p_col)
+      real rho_ooo(0:i1,jmax/p_row,kmax/p_col)
+      real phirnew(0:i1,jmax/p_row,kmax/p_col)
+      real phitnew(0:i1,jmax/p_row,kmax/p_col)
+      real phiznew(0:i1,jmax/p_row,kmax/p_col)
+
+      real qflux(0:i1,jmax/p_row,kmax/p_col)
+      real qfluy(0:i1,jmax/p_row,kmax/p_col)
+      real qfluz(0:i1,jmax/p_row,kmax/p_col)
+      real G(0:i1,jmax/p_row,kmax/p_col)
+      real vcore(0:i1,jmax/p_row,kmax/p_col)
+      real dudt(0:i1,jmax/p_row,kmax/p_col)
+      real dvdt(0:i1,jmax/p_row,kmax/p_col)
+      real dwdt(0:i1,jmax/p_row,kmax/p_col)
+      real drhodt(0:i1,jmax/p_row,kmax/p_col)
+      real drhodt_o(0:i1,jmax/p_row,kmax/p_col)
+      real drhodt_star(0:i1,jmax/p_row,kmax/p_col)
+      real divdivU(0:i1,jmax/p_row,kmax/p_col)
+      real divdivV(0:i1,jmax/p_row,kmax/p_col)
+      real divdivW(0:i1,jmax/p_row,kmax/p_col)
+      real trace(0:i1,jmax/p_row,kmax/p_col)
+      real div(0:i1,jmax/p_row,kmax/p_col)
+      real div_star(0:i1,jmax/p_row,kmax/p_col)
+      real div_star_o(0:i1,jmax/p_row,kmax/p_col)
+      real cpnew(0:i1,jmax/p_row,kmax/p_col)
+      real Twallh,Twallc,hwallh,hwallc
+
+      common /vels/unew,vnew,wnew,cnew,enew,renew,dudt,dvdt,dwdt,rhonew,phirnew,phitnew,phiznew,
+     ^             qflux,qfluy,qfluz,G,vcore,lambdanew,munew,cpnew,Twallh,Twallc,
+     ^	           hwallh,hwallc,div_star_o
+      save /vels/
+
+      real kappa(0:i1,jmax/p_row,kmax/p_col),sigma(imax,jmax/p_row,kmax/p_col)
+      real phase(lmax,mmax,lmax,mmax),kref,Ck
+      real divQ(0:i1,jmax/p_row,kmax/p_col)
+
+      common /radiat/ Ck,kappa,sigma,phase,divQ,kref
+      save /radiat/
+
+      real ru(0:i1),rp(0:i1),dr,dtheta,dz,visc,dt,Rin,Rout,Pr,Re,Pl,Tplus,delta(imax)
+      common /grid/ru,rp,dr,dtheta,dz,visc,dt,Rin,Rout,Pr,Re,Pl,Tplus,delta
+      save /grid/
+
+      real mr_s(imax),mr_c(0:imax)
+      common /maps/mr_s,mr_c
+      save /maps/
+ 
+      real p(imax,jmax/p_row,kmax/p_col)
+      common /press/p,drhodt,drhodt_star,rho_star,rho_o,rho_oo,rho_ooo,drhodt_o,divdivU,divdivV,divdivW,trace,div,div_star
+      
+      save /press/
+  
+      real enthTab(1:nTab),tempTab(1:nTab),rhoTab(1:nTab),muTab(1:nTab),lamTab(1:nTab),cpTab(1:nTab)
+      real temp2Tab(1:nTab),rho2Tab(1:nTab),mu2Tab(1:nTab),lam2Tab(1:nTab),cp2Tab(1:nTab)
+      common /table/enthTab,tempTab,rhoTab,muTab,lamTab,temp2Tab,rho2Tab,mu2Tab,lam2Tab,cpTab,cp2Tab
+      save /table/
+
+      integer rank_nord,rank_sud,rank_top,rank_bot
+      common /process/ rank_nord,rank_sud,rank_top,rank_bot
+      save /process/
+
+      real Twb,Twt,Tc
+      common /temp/Twb,Twt,Tc
+      save /temp/
+

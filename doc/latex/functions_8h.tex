@@ -1,0 +1,56 @@
+\hypertarget{functions_8h}{}\section{code/functions.h File Reference}
+\label{functions_8h}\index{code/functions.\+h@{code/functions.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{functions_8h_a60d0c7e7b7f218a24bd8c2e1bd4ad3b2}{interp3D} (\hyperlink{classVar__CPU}{Var\+\_\+\+C\+PU} $\ast$g)
+\item 
+void \hyperlink{functions_8h_a105303825191db9b11c081a47b8c2937}{spline} (\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} x\mbox{[}$\,$\mbox{]}, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} y\mbox{[}$\,$\mbox{]}, int n, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} yp1, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} ypn, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} y2\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{functions_8h_ad2bbc8ffbe0b7bfc8a61cd86e0667d36}{splint} (\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} xa\mbox{[}$\,$\mbox{]}, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} ya\mbox{[}$\,$\mbox{]}, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} y2a\mbox{[}$\,$\mbox{]}, int n, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} x)
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$ \hyperlink{functions_8h_a6736a82d1931478111b7b22ff4b1e892}{vector12} (long nl, long nh)
+\item 
+void \hyperlink{functions_8h_a5af8fbbf5fb4deda2ec44f65cbef316e}{free\+\_\+vector} (\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$v, long nl, long nh)
+\item 
+void \hyperlink{functions_8h_a4859dec39852da6f42f67ff615c58834}{readT} (\hyperlink{classNarrowBand}{Narrow\+Band} $\ast$narr\+Band, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$Tnb, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$\hyperlink{mc__gpu_8cu_ace3a0d571ca64447b29bc9999d23b85e}{kP}, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$prob\+\_\+h, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$probg\+\_\+h, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Tmax, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$kappamax)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{functions_8h_a5af8fbbf5fb4deda2ec44f65cbef316e}\label{functions_8h_a5af8fbbf5fb4deda2ec44f65cbef316e}} 
+\index{functions.\+h@{functions.\+h}!free\+\_\+vector@{free\+\_\+vector}}
+\index{free\+\_\+vector@{free\+\_\+vector}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{free\+\_\+vector()}{free\_vector()}}
+{\footnotesize\ttfamily void free\+\_\+vector (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{v,  }\item[{long}]{nl,  }\item[{long}]{nh }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{functions_8h_a60d0c7e7b7f218a24bd8c2e1bd4ad3b2}\label{functions_8h_a60d0c7e7b7f218a24bd8c2e1bd4ad3b2}} 
+\index{functions.\+h@{functions.\+h}!interp3D@{interp3D}}
+\index{interp3D@{interp3D}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{interp3\+D()}{interp3D()}}
+{\footnotesize\ttfamily void interp3D (\begin{DoxyParamCaption}\item[{\hyperlink{classVar__CPU}{Var\+\_\+\+C\+PU} $\ast$}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{functions_8h_a4859dec39852da6f42f67ff615c58834}\label{functions_8h_a4859dec39852da6f42f67ff615c58834}} 
+\index{functions.\+h@{functions.\+h}!readT@{readT}}
+\index{readT@{readT}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{read\+T()}{readT()}}
+{\footnotesize\ttfamily void readT (\begin{DoxyParamCaption}\item[{\hyperlink{classNarrowBand}{Narrow\+Band} $\ast$}]{narr\+Band,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{Tnb,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{kP,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{prob\+\_\+h,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{probg\+\_\+h,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Tmax,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{kappamax }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{functions_8h_a105303825191db9b11c081a47b8c2937}\label{functions_8h_a105303825191db9b11c081a47b8c2937}} 
+\index{functions.\+h@{functions.\+h}!spline@{spline}}
+\index{spline@{spline}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{spline()}{spline()}}
+{\footnotesize\ttfamily void spline (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{x\mbox{[}$\,$\mbox{]},  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{y\mbox{[}$\,$\mbox{]},  }\item[{int}]{n,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{yp1,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{ypn,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{y2\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{functions_8h_ad2bbc8ffbe0b7bfc8a61cd86e0667d36}\label{functions_8h_ad2bbc8ffbe0b7bfc8a61cd86e0667d36}} 
+\index{functions.\+h@{functions.\+h}!splint@{splint}}
+\index{splint@{splint}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{splint()}{splint()}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} splint (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{xa\mbox{[}$\,$\mbox{]},  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{ya\mbox{[}$\,$\mbox{]},  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{y2a\mbox{[}$\,$\mbox{]},  }\item[{int}]{n,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{functions_8h_a6736a82d1931478111b7b22ff4b1e892}\label{functions_8h_a6736a82d1931478111b7b22ff4b1e892}} 
+\index{functions.\+h@{functions.\+h}!vector12@{vector12}}
+\index{vector12@{vector12}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{vector12()}{vector12()}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}$\ast$ vector12 (\begin{DoxyParamCaption}\item[{long}]{nl,  }\item[{long}]{nh }\end{DoxyParamCaption})}
+

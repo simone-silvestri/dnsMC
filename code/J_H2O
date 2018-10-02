@@ -1,0 +1,27 @@
+#!/bin/bash
+##
+## Abvove line specifies which shell should process the 
+## shell commands
+## SLURM directives start with #SBATCH
+##
+## In this job an MPI program is started.
+## This job will run on two nodes, 16 processes on each node, 
+## making a total of 32 processes.
+#SBATCH -N 32 
+#SBATCH --ntasks-per-node=16
+#SBATCH -p gpu
+##SBATCH --constraint=haswell
+##
+## Job will take at most 1 hour, 10 minutes and 20 seconds wallclock time
+##
+#SBATCH -t 120:00:00
+##
+## Here the shell script starts. 
+## Go to the working directory:
+##
+## and call the MPI program
+## Note that the srun command is aware of the number of processes to start
+## These are defined above with the -N and --ntasks-per-node flags
+##
+mpirun -n 512 ./volh > out_s
+#./volh > out_s

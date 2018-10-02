@@ -1,0 +1,54 @@
+
+******************************************************************************
+Folder mie contains the mie code to calculate particle optical properties
+******************************************************************************
+
+input:
+-> spectal complex index of refraction (DATA/XXX)
+
+output:
+-> coeff_mie            to copy in ../distr/particle-data/carbon.txt
+-> scatt_to_copy        to copy in ../distr/particle-data/carbon-scatt.txt
+
+
+*************************************************************************************************
+Folder hitran contains the python library to retrieve the spectral absorption coefficient
+*************************************************************************************************
+
+follow the instructions contained into hapi-manual.pdf
+
+an example is CH4.py for methane between 300 and 2800 K (step of 20 K)
+
+****************************************************************************************
+Folder distr contains the narrow-band code to calculate fluid and particle narrow bands
+****************************************************************************************
+
+(interested here only in fluid)
+
+input:
+-> LBL spectra from HITRAN named "MOL_AK_Batm.txt" where MOL=molecule, A=temperature, B=pressure
+   found in MOL-data
+   (take care the whole temperature range is covered)
+-> particles optical properties (see mie folder)
+
+output:
+-> tables/NarrBandX.txt containing the pseudo-spectral absorption for the quadrature in the Narrow band X 
+   for all the temperatures
+-> tables/prob.txt contains the emission probability as a function of temperature and NB
+-> tables/prob_new2.txt contains the probability of emission of a certain quadrature point in the NB
+-> tables/planck-mean.txt planck mean absorption coefficient as a function of temperature
+-> tables/particles/NarrBandX.txt same as before but for particles in the same NB
+-> tables/particles/prob.txt same as before but for particles in the same NB
+-> tables/particles/planck-mean.txt same as before but for particles in the same NB
+-> tables/particles/prob_scatt.txt angular scattering probability based on phase function
+
+
+****************************************************************************************
+Folder code contains the actual DNS-MC code 
+****************************************************************************************
+
+Information for DNS is modified in param.txt
+Information fot MC  is modified in param.h
+
+absorption tables are directly taken from ../distr/tables/
+(particles are not used in this version)

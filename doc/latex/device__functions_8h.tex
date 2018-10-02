@@ -1,0 +1,64 @@
+\hypertarget{device__functions_8h}{}\section{code/device\+\_\+functions.h File Reference}
+\label{device__functions_8h}\index{code/device\+\_\+functions.\+h@{code/device\+\_\+functions.\+h}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+global\+\_\+\+\_\+ void \hyperlink{device__functions_8h_aee8de62d1d3574b4706efede5360e349}{kernel\+\_\+fluid} (\hyperlink{classGridn}{Gridn} $\ast$my\+\_\+grid, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$\hyperlink{mc__gpu_8cu_a64cbc4394e0b9bd53897ba9c9fb88fc4}{wvc\+\_\+d}, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$Tnb\+\_\+t, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$var, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$device, int n, int ns, int stream, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} kappamax, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Tmax, int $\ast$idx\+\_\+nb, cuda\+Texture\+Object\+\_\+t $\ast$tex\+\_\+\+Tf, cuda\+Texture\+Object\+\_\+t $\ast$tex, cuda\+Texture\+Object\+\_\+t $\ast$tex\+\_\+prob, int gpu, int ystart, \hyperlink{structEmissSpec}{Emiss\+Spec} $\ast$Ibw)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void \hyperlink{device__functions_8h_a371d09f214d1f9af7f47717c97ec18b0}{emiss\+\_\+ang} (\hyperlink{definitions_8h_a784616beaf04e11707aff8fd62ce0b8b}{Beam} $\ast$ray, curand\+State\+\_\+t $\ast$state)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void \hyperlink{device__functions_8h_a2adfcce7b6d9986ea7ac4a40fa99b910}{wave\+\_\+find} (int $\ast$nb, int $\ast$g, int $\ast$countnb, int $\ast$countg, int $\ast$idx\+\_\+nb, \hyperlink{classCount}{Count} $\ast$cnt)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void \hyperlink{device__functions_8h_a44d098df49e84e1042008b6299d5a9d1}{find\+\_\+band} (\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$Tnb, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Tmax, int $\ast$g, int $\ast$nb, curand\+State\+\_\+t $\ast$state, int tm, cuda\+Texture\+Object\+\_\+t $\ast$tex\+\_\+prob)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void \hyperlink{device__functions_8h_ad6f7a3a9c61ed187d9008e1abe89f357}{march\+\_\+ray} (\hyperlink{definitions_8h_a784616beaf04e11707aff8fd62ce0b8b}{Beam} $\ast$ray, int nb, int g, int $\ast$flag, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$De\+\_\+\+O\+E\+R\+Mc, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Ibmax, \hyperlink{classGridn}{Gridn} grid, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} ratioI, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} inv\+Ti4, cuda\+Texture\+Object\+\_\+t tex\+\_\+\+Tf, \hyperlink{structEmission}{Emission} emiss, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} wvc, const \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Tnb\mbox{[}$\,$\mbox{]}, cuda\+Texture\+Object\+\_\+t $\ast$tex)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void \hyperlink{device__functions_8h_a69a74cd79ab6ec3f9048693e61fc31e4}{kernel\+\_\+find} (\hyperlink{classCount}{Count} $\ast$count, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$Tnb, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Tmax, curand\+State\+\_\+t $\ast$state, cuda\+Texture\+Object\+\_\+t $\ast$tex\+\_\+prob)
+\item 
+\+\_\+\+\_\+global\+\_\+\+\_\+ void \hyperlink{device__functions_8h_ae31f8dda742f8a5c02a2be6ba989642e}{kernel\+\_\+results} (\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$\hyperlink{mc__gpu_8cu_aaf52a34d721b2c600e332ffc78a8ee68}{variance}, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$device, int n, int ns, int stream)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{device__functions_8h_a371d09f214d1f9af7f47717c97ec18b0}\label{device__functions_8h_a371d09f214d1f9af7f47717c97ec18b0}} 
+\index{device\+\_\+functions.\+h@{device\+\_\+functions.\+h}!emiss\+\_\+ang@{emiss\+\_\+ang}}
+\index{emiss\+\_\+ang@{emiss\+\_\+ang}!device\+\_\+functions.\+h@{device\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{emiss\+\_\+ang()}{emiss\_ang()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void emiss\+\_\+ang (\begin{DoxyParamCaption}\item[{\hyperlink{definitions_8h_a784616beaf04e11707aff8fd62ce0b8b}{Beam} $\ast$}]{ray,  }\item[{curand\+State\+\_\+t $\ast$}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{device__functions_8h_a44d098df49e84e1042008b6299d5a9d1}\label{device__functions_8h_a44d098df49e84e1042008b6299d5a9d1}} 
+\index{device\+\_\+functions.\+h@{device\+\_\+functions.\+h}!find\+\_\+band@{find\+\_\+band}}
+\index{find\+\_\+band@{find\+\_\+band}!device\+\_\+functions.\+h@{device\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{find\+\_\+band()}{find\_band()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void find\+\_\+band (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{Tnb,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Tmax,  }\item[{int $\ast$}]{g,  }\item[{int $\ast$}]{nb,  }\item[{curand\+State\+\_\+t $\ast$}]{state,  }\item[{int}]{tm,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{device__functions_8h_a69a74cd79ab6ec3f9048693e61fc31e4}\label{device__functions_8h_a69a74cd79ab6ec3f9048693e61fc31e4}} 
+\index{device\+\_\+functions.\+h@{device\+\_\+functions.\+h}!kernel\+\_\+find@{kernel\+\_\+find}}
+\index{kernel\+\_\+find@{kernel\+\_\+find}!device\+\_\+functions.\+h@{device\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{kernel\+\_\+find()}{kernel\_find()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void kernel\+\_\+find (\begin{DoxyParamCaption}\item[{\hyperlink{classCount}{Count} $\ast$}]{count,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{Tnb,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Tmax,  }\item[{curand\+State\+\_\+t $\ast$}]{state,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{device__functions_8h_aee8de62d1d3574b4706efede5360e349}\label{device__functions_8h_aee8de62d1d3574b4706efede5360e349}} 
+\index{device\+\_\+functions.\+h@{device\+\_\+functions.\+h}!kernel\+\_\+fluid@{kernel\+\_\+fluid}}
+\index{kernel\+\_\+fluid@{kernel\+\_\+fluid}!device\+\_\+functions.\+h@{device\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{kernel\+\_\+fluid()}{kernel\_fluid()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+global\+\_\+\+\_\+ void kernel\+\_\+fluid (\begin{DoxyParamCaption}\item[{\hyperlink{classGridn}{Gridn} $\ast$}]{my\+\_\+grid,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{wvc\+\_\+d,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{Tnb\+\_\+t,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{var,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{device,  }\item[{int}]{n,  }\item[{int}]{ns,  }\item[{int}]{stream,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{kappamax,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Tmax,  }\item[{int $\ast$}]{idx\+\_\+nb,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+\+Tf,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+prob,  }\item[{int}]{gpu,  }\item[{int}]{ystart,  }\item[{\hyperlink{structEmissSpec}{Emiss\+Spec} $\ast$}]{Ibw }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{device__functions_8h_ae31f8dda742f8a5c02a2be6ba989642e}\label{device__functions_8h_ae31f8dda742f8a5c02a2be6ba989642e}} 
+\index{device\+\_\+functions.\+h@{device\+\_\+functions.\+h}!kernel\+\_\+results@{kernel\+\_\+results}}
+\index{kernel\+\_\+results@{kernel\+\_\+results}!device\+\_\+functions.\+h@{device\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{kernel\+\_\+results()}{kernel\_results()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+global\+\_\+\+\_\+ void kernel\+\_\+results (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{variance,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{device,  }\item[{int}]{n,  }\item[{int}]{ns,  }\item[{int}]{stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{device__functions_8h_ad6f7a3a9c61ed187d9008e1abe89f357}\label{device__functions_8h_ad6f7a3a9c61ed187d9008e1abe89f357}} 
+\index{device\+\_\+functions.\+h@{device\+\_\+functions.\+h}!march\+\_\+ray@{march\+\_\+ray}}
+\index{march\+\_\+ray@{march\+\_\+ray}!device\+\_\+functions.\+h@{device\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{march\+\_\+ray()}{march\_ray()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void march\+\_\+ray (\begin{DoxyParamCaption}\item[{\hyperlink{definitions_8h_a784616beaf04e11707aff8fd62ce0b8b}{Beam} $\ast$}]{ray,  }\item[{int}]{nb,  }\item[{int}]{g,  }\item[{int $\ast$}]{flag,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{De\+\_\+\+O\+E\+R\+Mc,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Ibmax,  }\item[{\hyperlink{classGridn}{Gridn}}]{grid,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{ratioI,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{inv\+Ti4,  }\item[{cuda\+Texture\+Object\+\_\+t}]{tex\+\_\+\+Tf,  }\item[{\hyperlink{structEmission}{Emission}}]{emiss,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{wvc,  }\item[{const \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Tnb\mbox{[}$\,$\mbox{]},  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{device__functions_8h_a2adfcce7b6d9986ea7ac4a40fa99b910}\label{device__functions_8h_a2adfcce7b6d9986ea7ac4a40fa99b910}} 
+\index{device\+\_\+functions.\+h@{device\+\_\+functions.\+h}!wave\+\_\+find@{wave\+\_\+find}}
+\index{wave\+\_\+find@{wave\+\_\+find}!device\+\_\+functions.\+h@{device\+\_\+functions.\+h}}
+\subsubsection{\texorpdfstring{wave\+\_\+find()}{wave\_find()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void wave\+\_\+find (\begin{DoxyParamCaption}\item[{int $\ast$}]{nb,  }\item[{int $\ast$}]{g,  }\item[{int $\ast$}]{countnb,  }\item[{int $\ast$}]{countg,  }\item[{int $\ast$}]{idx\+\_\+nb,  }\item[{\hyperlink{classCount}{Count} $\ast$}]{cnt }\end{DoxyParamCaption})}
+

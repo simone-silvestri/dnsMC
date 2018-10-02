@@ -1,0 +1,305 @@
+\hypertarget{mc__gpu_8cu}{}\section{code/mc\+\_\+gpu.cu File Reference}
+\label{mc__gpu_8cu}\index{code/mc\+\_\+gpu.\+cu@{code/mc\+\_\+gpu.\+cu}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$cuda.\+h$>$}\newline
+{\ttfamily \#include $<$curand\+\_\+kernel.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}param.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}definitions.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}device\+\_\+functions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}memory.\+h\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPAIR}{P\+A\+IR}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{mc__gpu_8cu_ad7499b86f24bd31ddd5cac176d8e88cb}{sort\+\_\+idx} (\hyperlink{classNarrowBand}{Narrow\+Band} $\ast$narr\+Band)
+\item 
+\+\_\+\+\_\+global\+\_\+\+\_\+ void \hyperlink{mc__gpu_8cu_ad603ee98b5cd9e3d05deee64b1eceaa6}{kernel\+\_\+fluid} (\hyperlink{classGridn}{Gridn} $\ast$my\+\_\+grid, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$\hyperlink{mc__gpu_8cu_a64cbc4394e0b9bd53897ba9c9fb88fc4}{wvc\+\_\+d}, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$Tnb\+\_\+t, int n, int ns, int stream, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} kappamax, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Tmax, int $\ast$idx\+\_\+nb, cuda\+Texture\+Object\+\_\+t $\ast$tex\+\_\+\+Tf, cuda\+Texture\+Object\+\_\+t $\ast$tex, cuda\+Texture\+Object\+\_\+t $\ast$tex\+\_\+prob, int gpu, int ystart, \hyperlink{structEmissSpec}{Emiss\+Spec} $\ast$Ibw)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void \hyperlink{mc__gpu_8cu_ad6f7a3a9c61ed187d9008e1abe89f357}{march\+\_\+ray} (\hyperlink{definitions_8h_a784616beaf04e11707aff8fd62ce0b8b}{Beam} $\ast$ray, int nb, int g, int $\ast$flag, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$De\+\_\+\+O\+E\+R\+Mc, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Ibmax, \hyperlink{classGridn}{Gridn} grid, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} ratioI, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} inv\+Ti4, cuda\+Texture\+Object\+\_\+t tex\+\_\+\+Tf, \hyperlink{structEmission}{Emission} emiss, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} wvc, const \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Tnb\mbox{[}$\,$\mbox{]}, cuda\+Texture\+Object\+\_\+t $\ast$tex)
+\item 
+void \hyperlink{mc__gpu_8cu_a9c6c0f0d0dca80f4ac148e59eed79838}{mc\+\_\+gpu\+\_\+} (\hyperlink{param_8h_a8864e4d26f8f44fed5d0ae3d4f9e3c4a}{myfloatF} $\ast$Tfort, int $\ast$ystart)
+\item 
+void \hyperlink{mc__gpu_8cu_afd9f6194553240239ec004db3c16acec}{get\+\_\+results\+\_\+} (\hyperlink{param_8h_a8864e4d26f8f44fed5d0ae3d4f9e3c4a}{myfloatF} resfort\mbox{[}(\hyperlink{param_8h_a788916a7426baf172c67386359720d6d}{imax}+2) $\ast$(\hyperlink{param_8h_ac5c80d846ec0c4cf1c91fc5d9d66faa1}{jmax}/\hyperlink{param_8h_a149afb59990224def797b29467985bac}{p\+\_\+row}+2) $\ast$(\hyperlink{param_8h_ae0453dd20a7c6a923904df942ef82468}{kmax}+2)\mbox{]}, \hyperlink{param_8h_a8864e4d26f8f44fed5d0ae3d4f9e3c4a}{myfloatF} varfort\mbox{[}(\hyperlink{param_8h_a788916a7426baf172c67386359720d6d}{imax}+2) $\ast$(\hyperlink{param_8h_ac5c80d846ec0c4cf1c91fc5d9d66faa1}{jmax}/\hyperlink{param_8h_a149afb59990224def797b29467985bac}{p\+\_\+row}+2) $\ast$(\hyperlink{param_8h_ae0453dd20a7c6a923904df942ef82468}{kmax}+2)\mbox{]})
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void \hyperlink{mc__gpu_8cu_a69a74cd79ab6ec3f9048693e61fc31e4}{kernel\+\_\+find} (\hyperlink{classCount}{Count} $\ast$count, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$Tnb, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Tmax, curand\+State\+\_\+t $\ast$state, cuda\+Texture\+Object\+\_\+t $\ast$tex\+\_\+prob)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void \hyperlink{mc__gpu_8cu_a371d09f214d1f9af7f47717c97ec18b0}{emiss\+\_\+ang} (\hyperlink{definitions_8h_a784616beaf04e11707aff8fd62ce0b8b}{Beam} $\ast$ray, curand\+State\+\_\+t $\ast$state)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void \hyperlink{mc__gpu_8cu_a44d098df49e84e1042008b6299d5a9d1}{find\+\_\+band} (\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$Tnb, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} Tmax, int $\ast$g, int $\ast$nb, curand\+State\+\_\+t $\ast$state, int tm, cuda\+Texture\+Object\+\_\+t $\ast$tex\+\_\+prob)
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void \hyperlink{mc__gpu_8cu_a2adfcce7b6d9986ea7ac4a40fa99b910}{wave\+\_\+find} (int $\ast$nb, int $\ast$g, int $\ast$countnb, int $\ast$countg, int $\ast$idx\+\_\+nb, \hyperlink{classCount}{Count} $\ast$cnt)
+\item 
+bool \hyperlink{mc__gpu_8cu_ae7878c7cabc4f92516def54a8b2ae0ab}{compare} (\hyperlink{structPAIR}{P\+A\+IR} p1, \hyperlink{structPAIR}{P\+A\+IR} p2)
+\item 
+\+\_\+\+\_\+global\+\_\+\+\_\+ void \hyperlink{mc__gpu_8cu_a172551f61a20c0c530fa3fd3d7ce6eca}{kernel\+\_\+results} (\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$var, \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$device, int n, int ns, int stream)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{mc__gpu_8cu_aa6db95efdd74f7ed82aec0509a3c6079}{Ntot} = \hyperlink{param_8h_a788916a7426baf172c67386359720d6d}{imax}$\ast$\hyperlink{param_8h_ac5c80d846ec0c4cf1c91fc5d9d66faa1}{jmax}$\ast$\hyperlink{param_8h_ae0453dd20a7c6a923904df942ef82468}{kmax}
+\item 
+const int \hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N} = \hyperlink{mc__gpu_8cu_aa6db95efdd74f7ed82aec0509a3c6079}{Ntot}/\hyperlink{param_8h_ad38ac11e843c3ad8714da6e5599cd1fb}{num\+\_\+streams}/\hyperlink{param_8h_a31fefa6ddf1551a61e2cf79a379ff797}{num\+\_\+gpu}/\hyperlink{param_8h_a149afb59990224def797b29467985bac}{p\+\_\+row}
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{mc__gpu_8cu_ace3a0d571ca64447b29bc9999d23b85e}{kP} \mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{mc__gpu_8cu_a19c66f36e67229ffc84148aa337bc329}{prob} \mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{mc__gpu_8cu_a154b4ee2e5ccbfa05ff4d8df0337f5a3}{probg} \mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_ac207cb86a4c7e5bc1973837ee2339e59}{nQ}\mbox{]}
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{mc__gpu_8cu_a0eb715a1a15f62d859469e88a101e666}{k\+Pp} \mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{mc__gpu_8cu_a83c1d7ca537eb5fb4a345d9fb2efa881}{probp} \mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}
+\item 
+texture$<$ \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}, cuda\+Texture\+Type2D, cuda\+Read\+Mode\+Element\+Type $>$ \hyperlink{mc__gpu_8cu_a9845843f86869d1ea8e08ed0458cd0f0}{tex\+\_\+\+Ib}
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+constant\+\_\+\+\_\+ \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{mc__gpu_8cu_a131af82a244f87ed47b51923130d1dd8}{probd} \mbox{[}2\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{mc__gpu_8cu_afcb028a3164fe9ad50b60635222ffd5b}{solution} \mbox{[}\hyperlink{param_8h_ad38ac11e843c3ad8714da6e5599cd1fb}{num\+\_\+streams}\mbox{]}\mbox{[}\hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N}\mbox{]}
+\item 
+\+\_\+\+\_\+device\+\_\+\+\_\+ \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} \hyperlink{mc__gpu_8cu_aaf52a34d721b2c600e332ffc78a8ee68}{variance} \mbox{[}\hyperlink{param_8h_ad38ac11e843c3ad8714da6e5599cd1fb}{num\+\_\+streams}\mbox{]}\mbox{[}\hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N}\mbox{]}
+\item 
+\hyperlink{classGridn}{Gridn} $\ast$ \hyperlink{mc__gpu_8cu_a74de1e808220d77a904a4dd5835cdead}{grid\+G\+PU}
+\item 
+\hyperlink{structEmissSpec}{Emiss\+Spec} $\ast$ \hyperlink{mc__gpu_8cu_ae0d8a42c87785ba8b4a1792ff67ab599}{Ibw\+\_\+d}
+\item 
+cuda\+Array $\ast$ \hyperlink{mc__gpu_8cu_a291eae07ae1ee742a6aafd844ed9f7ef}{cu\+Array}
+\item 
+cuda\+Texture\+Object\+\_\+t $\ast$ \hyperlink{mc__gpu_8cu_aff98f241432bdd0d6a9caccb19426859}{tex\+\_\+tempf\+\_\+d}
+\item 
+int $\ast$ \hyperlink{mc__gpu_8cu_a0092894182b745f3aaa00baacf024329}{idx\+\_\+d}
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$ \hyperlink{mc__gpu_8cu_a64cbc4394e0b9bd53897ba9c9fb88fc4}{wvc\+\_\+d}
+\item 
+\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$ \hyperlink{mc__gpu_8cu_a1cf79772104f5b8b803bcbf4c6b5a053}{Tnb\+\_\+d}
+\item 
+cuda\+Texture\+Object\+\_\+t $\ast$ \hyperlink{mc__gpu_8cu_ad5c4d0a58301ccacad07ee3641a693b8}{tex\+\_\+d}
+\item 
+cuda\+Texture\+Object\+\_\+t $\ast$ \hyperlink{mc__gpu_8cu_af5760f0df5d9e1fdc7eb6c8ff7ef978d}{tex\+\_\+prob\+\_\+d}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{mc__gpu_8cu_ae7878c7cabc4f92516def54a8b2ae0ab}\label{mc__gpu_8cu_ae7878c7cabc4f92516def54a8b2ae0ab}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!compare@{compare}}
+\index{compare@{compare}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily bool compare (\begin{DoxyParamCaption}\item[{\hyperlink{structPAIR}{P\+A\+IR}}]{p1,  }\item[{\hyperlink{structPAIR}{P\+A\+IR}}]{p2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a371d09f214d1f9af7f47717c97ec18b0}\label{mc__gpu_8cu_a371d09f214d1f9af7f47717c97ec18b0}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!emiss\+\_\+ang@{emiss\+\_\+ang}}
+\index{emiss\+\_\+ang@{emiss\+\_\+ang}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{emiss\+\_\+ang()}{emiss\_ang()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void emiss\+\_\+ang (\begin{DoxyParamCaption}\item[{\hyperlink{definitions_8h_a784616beaf04e11707aff8fd62ce0b8b}{Beam} $\ast$}]{ray,  }\item[{curand\+State\+\_\+t $\ast$}]{state }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a44d098df49e84e1042008b6299d5a9d1}\label{mc__gpu_8cu_a44d098df49e84e1042008b6299d5a9d1}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!find\+\_\+band@{find\+\_\+band}}
+\index{find\+\_\+band@{find\+\_\+band}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{find\+\_\+band()}{find\_band()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void find\+\_\+band (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{Tnb,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Tmax,  }\item[{int $\ast$}]{g,  }\item[{int $\ast$}]{nb,  }\item[{curand\+State\+\_\+t $\ast$}]{state,  }\item[{int}]{tm,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mc__gpu_8cu_afd9f6194553240239ec004db3c16acec}\label{mc__gpu_8cu_afd9f6194553240239ec004db3c16acec}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!get\+\_\+results\+\_\+@{get\+\_\+results\+\_\+}}
+\index{get\+\_\+results\+\_\+@{get\+\_\+results\+\_\+}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{get\+\_\+results\+\_\+()}{get\_results\_()}}
+{\footnotesize\ttfamily void get\+\_\+results\+\_\+ (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a8864e4d26f8f44fed5d0ae3d4f9e3c4a}{myfloatF}}]{resfort\mbox{[}(imax+2) $\ast$(jmax/p\+\_\+row+2) $\ast$(kmax+2)\mbox{]},  }\item[{\hyperlink{param_8h_a8864e4d26f8f44fed5d0ae3d4f9e3c4a}{myfloatF}}]{varfort\mbox{[}(imax+2) $\ast$(jmax/p\+\_\+row+2) $\ast$(kmax+2)\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a69a74cd79ab6ec3f9048693e61fc31e4}\label{mc__gpu_8cu_a69a74cd79ab6ec3f9048693e61fc31e4}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!kernel\+\_\+find@{kernel\+\_\+find}}
+\index{kernel\+\_\+find@{kernel\+\_\+find}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{kernel\+\_\+find()}{kernel\_find()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void kernel\+\_\+find (\begin{DoxyParamCaption}\item[{\hyperlink{classCount}{Count} $\ast$}]{count,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{Tnb,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Tmax,  }\item[{curand\+State\+\_\+t $\ast$}]{state,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+prob }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mc__gpu_8cu_ad603ee98b5cd9e3d05deee64b1eceaa6}\label{mc__gpu_8cu_ad603ee98b5cd9e3d05deee64b1eceaa6}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!kernel\+\_\+fluid@{kernel\+\_\+fluid}}
+\index{kernel\+\_\+fluid@{kernel\+\_\+fluid}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{kernel\+\_\+fluid()}{kernel\_fluid()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+global\+\_\+\+\_\+ void kernel\+\_\+fluid (\begin{DoxyParamCaption}\item[{\hyperlink{classGridn}{Gridn} $\ast$}]{my\+\_\+grid,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{wvc\+\_\+d,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{Tnb\+\_\+t,  }\item[{int}]{n,  }\item[{int}]{ns,  }\item[{int}]{stream,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{kappamax,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Tmax,  }\item[{int $\ast$}]{idx\+\_\+nb,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+\+Tf,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex,  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex\+\_\+prob,  }\item[{int}]{gpu,  }\item[{int}]{ystart,  }\item[{\hyperlink{structEmissSpec}{Emiss\+Spec} $\ast$}]{Ibw }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a172551f61a20c0c530fa3fd3d7ce6eca}\label{mc__gpu_8cu_a172551f61a20c0c530fa3fd3d7ce6eca}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!kernel\+\_\+results@{kernel\+\_\+results}}
+\index{kernel\+\_\+results@{kernel\+\_\+results}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{kernel\+\_\+results()}{kernel\_results()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+global\+\_\+\+\_\+ void kernel\+\_\+results (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{var,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{device,  }\item[{int}]{n,  }\item[{int}]{ns,  }\item[{int}]{stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mc__gpu_8cu_ad6f7a3a9c61ed187d9008e1abe89f357}\label{mc__gpu_8cu_ad6f7a3a9c61ed187d9008e1abe89f357}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!march\+\_\+ray@{march\+\_\+ray}}
+\index{march\+\_\+ray@{march\+\_\+ray}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{march\+\_\+ray()}{march\_ray()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void march\+\_\+ray (\begin{DoxyParamCaption}\item[{\hyperlink{definitions_8h_a784616beaf04e11707aff8fd62ce0b8b}{Beam} $\ast$}]{ray,  }\item[{int}]{nb,  }\item[{int}]{g,  }\item[{int $\ast$}]{flag,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} $\ast$}]{De\+\_\+\+O\+E\+R\+Mc,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Ibmax,  }\item[{\hyperlink{classGridn}{Gridn}}]{grid,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{ratioI,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{inv\+Ti4,  }\item[{cuda\+Texture\+Object\+\_\+t}]{tex\+\_\+\+Tf,  }\item[{\hyperlink{structEmission}{Emission}}]{emiss,  }\item[{\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{wvc,  }\item[{const \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}}]{Tnb\mbox{[}$\,$\mbox{]},  }\item[{cuda\+Texture\+Object\+\_\+t $\ast$}]{tex }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a9c6c0f0d0dca80f4ac148e59eed79838}\label{mc__gpu_8cu_a9c6c0f0d0dca80f4ac148e59eed79838}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!mc\+\_\+gpu\+\_\+@{mc\+\_\+gpu\+\_\+}}
+\index{mc\+\_\+gpu\+\_\+@{mc\+\_\+gpu\+\_\+}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{mc\+\_\+gpu\+\_\+()}{mc\_gpu\_()}}
+{\footnotesize\ttfamily void mc\+\_\+gpu\+\_\+ (\begin{DoxyParamCaption}\item[{\hyperlink{param_8h_a8864e4d26f8f44fed5d0ae3d4f9e3c4a}{myfloatF} $\ast$}]{Tfort,  }\item[{int $\ast$}]{ystart }\end{DoxyParamCaption})}
+
+This function kickstarts the Monte Carlo radiative calculation on the G\+PU.
+
+input -\/$>$ Tfort (imax+2,jmax+2,kmax+2), temperature in the whole domain. \begin{DoxyVerb}  -> ystart, indication of the HPC node we are in (starting j value of the mesh).
+\end{DoxyVerb}
+
+
+output -\/$>$ none, the control is returned immediately to the fortran part of the code after the MC calculation is started.
+
+Steps\+:
+
+1) create the different grid levels (based on grid\+\_\+num).
+
+2) interpolate temperature on the different grids.
+
+3) read the narrow band absorption coefficient andthe MC probabilities.
+
+4) Copy all the memory to the G\+PU in textured memory when possible.
+
+5) start the G\+PU kernel.
+
+6) return the control to the fortran code.\mbox{\Hypertarget{mc__gpu_8cu_ad7499b86f24bd31ddd5cac176d8e88cb}\label{mc__gpu_8cu_ad7499b86f24bd31ddd5cac176d8e88cb}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!sort\+\_\+idx@{sort\+\_\+idx}}
+\index{sort\+\_\+idx@{sort\+\_\+idx}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{sort\+\_\+idx()}{sort\_idx()}}
+{\footnotesize\ttfamily void sort\+\_\+idx (\begin{DoxyParamCaption}\item[{\hyperlink{classNarrowBand}{Narrow\+Band} $\ast$}]{narr\+Band }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a2adfcce7b6d9986ea7ac4a40fa99b910}\label{mc__gpu_8cu_a2adfcce7b6d9986ea7ac4a40fa99b910}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!wave\+\_\+find@{wave\+\_\+find}}
+\index{wave\+\_\+find@{wave\+\_\+find}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{wave\+\_\+find()}{wave\_find()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+forceinline\+\_\+\+\_\+ void wave\+\_\+find (\begin{DoxyParamCaption}\item[{int $\ast$}]{nb,  }\item[{int $\ast$}]{g,  }\item[{int $\ast$}]{countnb,  }\item[{int $\ast$}]{countg,  }\item[{int $\ast$}]{idx\+\_\+nb,  }\item[{\hyperlink{classCount}{Count} $\ast$}]{cnt }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{mc__gpu_8cu_a291eae07ae1ee742a6aafd844ed9f7ef}\label{mc__gpu_8cu_a291eae07ae1ee742a6aafd844ed9f7ef}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!cu\+Array@{cu\+Array}}
+\index{cu\+Array@{cu\+Array}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{cu\+Array}{cuArray}}
+{\footnotesize\ttfamily cuda\+Array$\ast$ cu\+Array}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a74de1e808220d77a904a4dd5835cdead}\label{mc__gpu_8cu_a74de1e808220d77a904a4dd5835cdead}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!grid\+G\+PU@{grid\+G\+PU}}
+\index{grid\+G\+PU@{grid\+G\+PU}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{grid\+G\+PU}{gridGPU}}
+{\footnotesize\ttfamily \hyperlink{classGridn}{Gridn}$\ast$ grid\+G\+PU}
+
+\mbox{\Hypertarget{mc__gpu_8cu_ae0d8a42c87785ba8b4a1792ff67ab599}\label{mc__gpu_8cu_ae0d8a42c87785ba8b4a1792ff67ab599}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!Ibw\+\_\+d@{Ibw\+\_\+d}}
+\index{Ibw\+\_\+d@{Ibw\+\_\+d}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{Ibw\+\_\+d}{Ibw\_d}}
+{\footnotesize\ttfamily \hyperlink{structEmissSpec}{Emiss\+Spec}$\ast$ Ibw\+\_\+d}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a0092894182b745f3aaa00baacf024329}\label{mc__gpu_8cu_a0092894182b745f3aaa00baacf024329}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!idx\+\_\+d@{idx\+\_\+d}}
+\index{idx\+\_\+d@{idx\+\_\+d}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{idx\+\_\+d}{idx\_d}}
+{\footnotesize\ttfamily int$\ast$ idx\+\_\+d}
+
+\mbox{\Hypertarget{mc__gpu_8cu_ace3a0d571ca64447b29bc9999d23b85e}\label{mc__gpu_8cu_ace3a0d571ca64447b29bc9999d23b85e}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!kP@{kP}}
+\index{kP@{kP}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{kP}{kP}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} kP\mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a0eb715a1a15f62d859469e88a101e666}\label{mc__gpu_8cu_a0eb715a1a15f62d859469e88a101e666}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!k\+Pp@{k\+Pp}}
+\index{k\+Pp@{k\+Pp}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{k\+Pp}{kPp}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} k\+Pp\mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}}
+
+\mbox{\Hypertarget{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}\label{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!N@{N}}
+\index{N@{N}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{N}{N}}
+{\footnotesize\ttfamily const int N = \hyperlink{mc__gpu_8cu_aa6db95efdd74f7ed82aec0509a3c6079}{Ntot}/\hyperlink{param_8h_ad38ac11e843c3ad8714da6e5599cd1fb}{num\+\_\+streams}/\hyperlink{param_8h_a31fefa6ddf1551a61e2cf79a379ff797}{num\+\_\+gpu}/\hyperlink{param_8h_a149afb59990224def797b29467985bac}{p\+\_\+row}}
+
+\mbox{\Hypertarget{mc__gpu_8cu_aa6db95efdd74f7ed82aec0509a3c6079}\label{mc__gpu_8cu_aa6db95efdd74f7ed82aec0509a3c6079}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!Ntot@{Ntot}}
+\index{Ntot@{Ntot}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{Ntot}{Ntot}}
+{\footnotesize\ttfamily const int Ntot = \hyperlink{param_8h_a788916a7426baf172c67386359720d6d}{imax}$\ast$\hyperlink{param_8h_ac5c80d846ec0c4cf1c91fc5d9d66faa1}{jmax}$\ast$\hyperlink{param_8h_ae0453dd20a7c6a923904df942ef82468}{kmax}}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a19c66f36e67229ffc84148aa337bc329}\label{mc__gpu_8cu_a19c66f36e67229ffc84148aa337bc329}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!prob@{prob}}
+\index{prob@{prob}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{prob}{prob}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} prob\mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}}
+
+Copyright 1993-\/2012 N\+V\+I\+D\+IA Corporation. All rights reserved.
+
+Please refer to the N\+V\+I\+D\+IA end user license agreement (E\+U\+LA) associated with this source code for terms and conditions that govern your use of this software. Any use, reproduction, disclosure, or distribution of this software and related documentation outside the terms of the E\+U\+LA is strictly prohibited. \mbox{\Hypertarget{mc__gpu_8cu_a131af82a244f87ed47b51923130d1dd8}\label{mc__gpu_8cu_a131af82a244f87ed47b51923130d1dd8}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!probd@{probd}}
+\index{probd@{probd}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{probd}{probd}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \+\_\+\+\_\+constant\+\_\+\+\_\+ \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} probd\mbox{[}2\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a154b4ee2e5ccbfa05ff4d8df0337f5a3}\label{mc__gpu_8cu_a154b4ee2e5ccbfa05ff4d8df0337f5a3}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!probg@{probg}}
+\index{probg@{probg}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{probg}{probg}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} probg\mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_ac207cb86a4c7e5bc1973837ee2339e59}{nQ}\mbox{]}}
+
+Copyright 1993-\/2012 N\+V\+I\+D\+IA Corporation. All rights reserved.
+
+Please refer to the N\+V\+I\+D\+IA end user license agreement (E\+U\+LA) associated with this source code for terms and conditions that govern your use of this software. Any use, reproduction, disclosure, or distribution of this software and related documentation outside the terms of the E\+U\+LA is strictly prohibited. \mbox{\Hypertarget{mc__gpu_8cu_a83c1d7ca537eb5fb4a345d9fb2efa881}\label{mc__gpu_8cu_a83c1d7ca537eb5fb4a345d9fb2efa881}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!probp@{probp}}
+\index{probp@{probp}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{probp}{probp}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} probp\mbox{[}\hyperlink{NarrowBand_8h_a11e43991170d325cb21737c8e7d5acaa}{nT}\mbox{]}\mbox{[}\hyperlink{NarrowBand_8h_aca13f491975ccaa9a165708a85753bda}{nB}\mbox{]}}
+
+\mbox{\Hypertarget{mc__gpu_8cu_afcb028a3164fe9ad50b60635222ffd5b}\label{mc__gpu_8cu_afcb028a3164fe9ad50b60635222ffd5b}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!solution@{solution}}
+\index{solution@{solution}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{solution}{solution}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} solution\mbox{[}\hyperlink{param_8h_ad38ac11e843c3ad8714da6e5599cd1fb}{num\+\_\+streams}\mbox{]}\mbox{[}\hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N}\mbox{]}}
+
+\mbox{\Hypertarget{mc__gpu_8cu_ad5c4d0a58301ccacad07ee3641a693b8}\label{mc__gpu_8cu_ad5c4d0a58301ccacad07ee3641a693b8}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!tex\+\_\+d@{tex\+\_\+d}}
+\index{tex\+\_\+d@{tex\+\_\+d}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{tex\+\_\+d}{tex\_d}}
+{\footnotesize\ttfamily cuda\+Texture\+Object\+\_\+t$\ast$ tex\+\_\+d}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a9845843f86869d1ea8e08ed0458cd0f0}\label{mc__gpu_8cu_a9845843f86869d1ea8e08ed0458cd0f0}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!tex\+\_\+\+Ib@{tex\+\_\+\+Ib}}
+\index{tex\+\_\+\+Ib@{tex\+\_\+\+Ib}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{tex\+\_\+\+Ib}{tex\_Ib}}
+{\footnotesize\ttfamily texture$<$\hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}, cuda\+Texture\+Type2D, cuda\+Read\+Mode\+Element\+Type$>$ tex\+\_\+\+Ib}
+
+\mbox{\Hypertarget{mc__gpu_8cu_af5760f0df5d9e1fdc7eb6c8ff7ef978d}\label{mc__gpu_8cu_af5760f0df5d9e1fdc7eb6c8ff7ef978d}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!tex\+\_\+prob\+\_\+d@{tex\+\_\+prob\+\_\+d}}
+\index{tex\+\_\+prob\+\_\+d@{tex\+\_\+prob\+\_\+d}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{tex\+\_\+prob\+\_\+d}{tex\_prob\_d}}
+{\footnotesize\ttfamily cuda\+Texture\+Object\+\_\+t$\ast$ tex\+\_\+prob\+\_\+d}
+
+\mbox{\Hypertarget{mc__gpu_8cu_aff98f241432bdd0d6a9caccb19426859}\label{mc__gpu_8cu_aff98f241432bdd0d6a9caccb19426859}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!tex\+\_\+tempf\+\_\+d@{tex\+\_\+tempf\+\_\+d}}
+\index{tex\+\_\+tempf\+\_\+d@{tex\+\_\+tempf\+\_\+d}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{tex\+\_\+tempf\+\_\+d}{tex\_tempf\_d}}
+{\footnotesize\ttfamily cuda\+Texture\+Object\+\_\+t$\ast$ tex\+\_\+tempf\+\_\+d}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a1cf79772104f5b8b803bcbf4c6b5a053}\label{mc__gpu_8cu_a1cf79772104f5b8b803bcbf4c6b5a053}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!Tnb\+\_\+d@{Tnb\+\_\+d}}
+\index{Tnb\+\_\+d@{Tnb\+\_\+d}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{Tnb\+\_\+d}{Tnb\_d}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}$\ast$ Tnb\+\_\+d}
+
+\mbox{\Hypertarget{mc__gpu_8cu_aaf52a34d721b2c600e332ffc78a8ee68}\label{mc__gpu_8cu_aaf52a34d721b2c600e332ffc78a8ee68}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!variance@{variance}}
+\index{variance@{variance}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{variance}{variance}}
+{\footnotesize\ttfamily \+\_\+\+\_\+device\+\_\+\+\_\+ \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat} variance\mbox{[}\hyperlink{param_8h_ad38ac11e843c3ad8714da6e5599cd1fb}{num\+\_\+streams}\mbox{]}\mbox{[}\hyperlink{mc__gpu_8cu_ab2b6b0c222cd1ce70d6a831f57241e59}{N}\mbox{]}}
+
+\mbox{\Hypertarget{mc__gpu_8cu_a64cbc4394e0b9bd53897ba9c9fb88fc4}\label{mc__gpu_8cu_a64cbc4394e0b9bd53897ba9c9fb88fc4}} 
+\index{mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}!wvc\+\_\+d@{wvc\+\_\+d}}
+\index{wvc\+\_\+d@{wvc\+\_\+d}!mc\+\_\+gpu.\+cu@{mc\+\_\+gpu.\+cu}}
+\subsubsection{\texorpdfstring{wvc\+\_\+d}{wvc\_d}}
+{\footnotesize\ttfamily \hyperlink{param_8h_a5f097c9f3873af7be7fc156e6a06ca5e}{myfloat}$\ast$ wvc\+\_\+d}
+

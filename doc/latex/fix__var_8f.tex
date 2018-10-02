@@ -1,0 +1,48 @@
+\hypertarget{fix__var_8f}{}\section{code/fix\+\_\+var.f File Reference}
+\label{fix__var_8f}\index{code/fix\+\_\+var.\+f@{code/fix\+\_\+var.\+f}}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{fix__var_8f_af4aa948d8d18b1b8319b5c6abc736162}{read\+\_\+kp} (\hyperlink{mc__gpu_8cu_ace3a0d571ca64447b29bc9999d23b85e}{kP}, Tnb, nrank)
+\item 
+subroutine \hyperlink{fix__var_8f_a81dd39b05aed1d1fff12dfef301189a6}{fix\+\_\+kappa} (\hyperlink{mc__gpu_8cu_ace3a0d571ca64447b29bc9999d23b85e}{kP}, Tnb)
+\item 
+subroutine \hyperlink{fix__var_8f_a1ab3da80be3f3ec186d62448e97fb109}{linear\+\_\+int} (y, x, x0, y0, n)
+\item 
+subroutine \hyperlink{fix__var_8f_a361fadb6169e81f1c82345e5a3ce16a6}{fix\+\_\+temp} (cnew, T\+MC, Tc, Tplus, startc, endc)
+\item 
+subroutine \hyperlink{fix__var_8f_a5378a292df9beea36067a2558a342a0d}{fix\+\_\+rad} (divQ, vcore, qr, vr, Tc, M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+N\+O\+DE, startc,
+\end{DoxyCompactItemize}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\mbox{\Hypertarget{fix__var_8f_a81dd39b05aed1d1fff12dfef301189a6}\label{fix__var_8f_a81dd39b05aed1d1fff12dfef301189a6}} 
+\index{fix\+\_\+var.\+f@{fix\+\_\+var.\+f}!fix\+\_\+kappa@{fix\+\_\+kappa}}
+\index{fix\+\_\+kappa@{fix\+\_\+kappa}!fix\+\_\+var.\+f@{fix\+\_\+var.\+f}}
+\subsubsection{\texorpdfstring{fix\+\_\+kappa()}{fix\_kappa()}}
+{\footnotesize\ttfamily subroutine fix\+\_\+kappa (\begin{DoxyParamCaption}\item[{real, dimension(ntemp)}]{kP,  }\item[{real, dimension(ntemp)}]{Tnb }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fix__var_8f_a5378a292df9beea36067a2558a342a0d}\label{fix__var_8f_a5378a292df9beea36067a2558a342a0d}} 
+\index{fix\+\_\+var.\+f@{fix\+\_\+var.\+f}!fix\+\_\+rad@{fix\+\_\+rad}}
+\index{fix\+\_\+rad@{fix\+\_\+rad}!fix\+\_\+var.\+f@{fix\+\_\+var.\+f}}
+\subsubsection{\texorpdfstring{fix\+\_\+rad()}{fix\_rad()}}
+{\footnotesize\ttfamily subroutine fix\+\_\+rad (\begin{DoxyParamCaption}\item[{real, dimension (0\+:\hyperlink{param_8h_a788916a7426baf172c67386359720d6d}{imax}+1,\hyperlink{param_8h_ac5c80d846ec0c4cf1c91fc5d9d66faa1}{jmax}/\hyperlink{param_8h_a149afb59990224def797b29467985bac}{p\+\_\+row},\hyperlink{param_8h_ae0453dd20a7c6a923904df942ef82468}{kmax}/p\+\_\+col)}]{divQ,  }\item[{real, dimension(0\+:\hyperlink{param_8h_a788916a7426baf172c67386359720d6d}{imax}+1,\hyperlink{param_8h_ac5c80d846ec0c4cf1c91fc5d9d66faa1}{jmax}/\hyperlink{param_8h_a149afb59990224def797b29467985bac}{p\+\_\+row},\hyperlink{param_8h_ae0453dd20a7c6a923904df942ef82468}{kmax}/p\+\_\+col)}]{vcore,  }\item[{real(kind=4), dimension  (0\+:\hyperlink{param_8h_a788916a7426baf172c67386359720d6d}{imax}+1,0\+:\hyperlink{param_8h_ac5c80d846ec0c4cf1c91fc5d9d66faa1}{jmax}/\hyperlink{param_8h_a149afb59990224def797b29467985bac}{p\+\_\+row}+1,0\+:\hyperlink{param_8h_ae0453dd20a7c6a923904df942ef82468}{kmax}+1)}]{qr,  }\item[{real(kind=4), dimension  (0\+:\hyperlink{param_8h_a788916a7426baf172c67386359720d6d}{imax}+1,0\+:\hyperlink{param_8h_ac5c80d846ec0c4cf1c91fc5d9d66faa1}{jmax}/\hyperlink{param_8h_a149afb59990224def797b29467985bac}{p\+\_\+row}+1,0\+:\hyperlink{param_8h_ae0453dd20a7c6a923904df942ef82468}{kmax}+1)}]{vr,  }\item[{real}]{Tc,  }\item[{integer}]{M\+P\+I\+\_\+\+C\+O\+M\+M\+\_\+\+N\+O\+DE,  }\item[{integer, dimension(3)}]{startc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fix__var_8f_a361fadb6169e81f1c82345e5a3ce16a6}\label{fix__var_8f_a361fadb6169e81f1c82345e5a3ce16a6}} 
+\index{fix\+\_\+var.\+f@{fix\+\_\+var.\+f}!fix\+\_\+temp@{fix\+\_\+temp}}
+\index{fix\+\_\+temp@{fix\+\_\+temp}!fix\+\_\+var.\+f@{fix\+\_\+var.\+f}}
+\subsubsection{\texorpdfstring{fix\+\_\+temp()}{fix\_temp()}}
+{\footnotesize\ttfamily subroutine fix\+\_\+temp (\begin{DoxyParamCaption}\item[{real, dimension(0\+:\hyperlink{param_8h_a788916a7426baf172c67386359720d6d}{imax}+1,\hyperlink{param_8h_ac5c80d846ec0c4cf1c91fc5d9d66faa1}{jmax}/\hyperlink{param_8h_a149afb59990224def797b29467985bac}{p\+\_\+row},\hyperlink{param_8h_ae0453dd20a7c6a923904df942ef82468}{kmax}/p\+\_\+col)}]{cnew,  }\item[{real(kind=4), dimension(0\+:\hyperlink{param_8h_a788916a7426baf172c67386359720d6d}{imax}+1,0\+:\hyperlink{param_8h_ac5c80d846ec0c4cf1c91fc5d9d66faa1}{jmax}+1,0\+:\hyperlink{param_8h_ae0453dd20a7c6a923904df942ef82468}{kmax}+1)}]{T\+MC,  }\item[{real}]{Tc,  }\item[{real}]{Tplus,  }\item[{integer, dimension(3)}]{startc,  }\item[{integer, dimension(3)}]{endc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fix__var_8f_a1ab3da80be3f3ec186d62448e97fb109}\label{fix__var_8f_a1ab3da80be3f3ec186d62448e97fb109}} 
+\index{fix\+\_\+var.\+f@{fix\+\_\+var.\+f}!linear\+\_\+int@{linear\+\_\+int}}
+\index{linear\+\_\+int@{linear\+\_\+int}!fix\+\_\+var.\+f@{fix\+\_\+var.\+f}}
+\subsubsection{\texorpdfstring{linear\+\_\+int()}{linear\_int()}}
+{\footnotesize\ttfamily subroutine linear\+\_\+int (\begin{DoxyParamCaption}\item[{real, dimension(n)}]{y,  }\item[{real, dimension(n)}]{x,  }\item[{real}]{x0,  }\item[{real}]{y0,  }\item[{integer}]{n }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fix__var_8f_af4aa948d8d18b1b8319b5c6abc736162}\label{fix__var_8f_af4aa948d8d18b1b8319b5c6abc736162}} 
+\index{fix\+\_\+var.\+f@{fix\+\_\+var.\+f}!read\+\_\+kp@{read\+\_\+kp}}
+\index{read\+\_\+kp@{read\+\_\+kp}!fix\+\_\+var.\+f@{fix\+\_\+var.\+f}}
+\subsubsection{\texorpdfstring{read\+\_\+kp()}{read\_kp()}}
+{\footnotesize\ttfamily subroutine read\+\_\+kp (\begin{DoxyParamCaption}\item[{real, dimension(ntemp)}]{kP,  }\item[{real, dimension(ntemp)}]{Tnb,  }\item[{integer}]{nrank }\end{DoxyParamCaption})}
+

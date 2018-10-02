@@ -1,0 +1,187 @@
+Starting program
+
+removing tables
+
+removing parameters
+
+namefile H2O-data/H2O_1010K_1atm.txt
+
+Total intensity : 9.331252, Total Wide bands : 1 
+
+Wide-band 0 ,	 Narrow-bands 119, 	 delta wv 100.834118,	 Wide-band size 11999.260000
+
+Total narrow bands : 119
+
+Max error in -> Wide-band 0, Narrow-band 2, max error 0.054064 %, mean error -0.049483 %
+Reading data from temperature: 500.000000
+Reading data from temperature: 510.000000
+Reading data from temperature: 520.000000
+Reading data from temperature: 530.000000
+Reading data from temperature: 540.000000
+Reading data from temperature: 550.000000
+Reading data from temperature: 560.000000
+Reading data from temperature: 570.000000
+Reading data from temperature: 580.000000
+Reading data from temperature: 590.000000
+Reading data from temperature: 600.000000
+Reading data from temperature: 610.000000
+Reading data from temperature: 620.000000
+Reading data from temperature: 630.000000
+Reading data from temperature: 640.000000
+Reading data from temperature: 650.000000
+Reading data from temperature: 660.000000
+Reading data from temperature: 670.000000
+Reading data from temperature: 680.000000
+Reading data from temperature: 690.000000
+Reading data from temperature: 700.000000
+Reading data from temperature: 710.000000
+Reading data from temperature: 720.000000
+Reading data from temperature: 730.000000
+Reading data from temperature: 740.000000
+Reading data from temperature: 750.000000
+Reading data from temperature: 760.000000
+Reading data from temperature: 770.000000
+Reading data from temperature: 780.000000
+Reading data from temperature: 790.000000
+Reading data from temperature: 800.000000
+Reading data from temperature: 810.000000
+Reading data from temperature: 820.000000
+Reading data from temperature: 830.000000
+Reading data from temperature: 840.000000
+Reading data from temperature: 850.000000
+Reading data from temperature: 860.000000
+Reading data from temperature: 870.000000
+Reading data from temperature: 880.000000
+Reading data from temperature: 890.000000
+Reading data from temperature: 900.000000
+Reading data from temperature: 910.000000
+Reading data from temperature: 920.000000
+Reading data from temperature: 930.000000
+Reading data from temperature: 940.000000
+Reading data from temperature: 950.000000
+Reading data from temperature: 960.000000
+Reading data from temperature: 970.000000
+Reading data from temperature: 980.000000
+Reading data from temperature: 990.000000
+Reading data from temperature: 1000.000000
+Reading data from temperature: 1010.000000
+Reading particle data from file: particle-data/carbon.txt
+Reading phase data from file: particle-data/carbon-scatt.txt
+Re-distributing temperature 500.000000
+Re-distributing temperature 510.000000
+Re-distributing temperature 520.000000
+Re-distributing temperature 530.000000
+Re-distributing temperature 540.000000
+Re-distributing temperature 550.000000
+Re-distributing temperature 560.000000
+Re-distributing temperature 570.000000
+Re-distributing temperature 580.000000
+Re-distributing temperature 590.000000
+Re-distributing temperature 600.000000
+Re-distributing temperature 610.000000
+Re-distributing temperature 620.000000
+Re-distributing temperature 630.000000
+Re-distributing temperature 640.000000
+Re-distributing temperature 650.000000
+Re-distributing temperature 660.000000
+Re-distributing temperature 670.000000
+Re-distributing temperature 680.000000
+Re-distributing temperature 690.000000
+Re-distributing temperature 700.000000
+Re-distributing temperature 710.000000
+Re-distributing temperature 720.000000
+Re-distributing temperature 730.000000
+Re-distributing temperature 740.000000
+Re-distributing temperature 750.000000
+Re-distributing temperature 760.000000
+Re-distributing temperature 770.000000
+Re-distributing temperature 780.000000
+Re-distributing temperature 790.000000
+Re-distributing temperature 800.000000
+Re-distributing temperature 810.000000
+Re-distributing temperature 820.000000
+Re-distributing temperature 830.000000
+Re-distributing temperature 840.000000
+Re-distributing temperature 850.000000
+Re-distributing temperature 860.000000
+Re-distributing temperature 870.000000
+Re-distributing temperature 880.000000
+Re-distributing temperature 890.000000
+Re-distributing temperature 900.000000
+Re-distributing temperature 910.000000
+Re-distributing temperature 920.000000
+Re-distributing temperature 930.000000
+Re-distributing temperature 940.000000
+Re-distributing temperature 950.000000
+Re-distributing temperature 960.000000
+Re-distributing temperature 970.000000
+Re-distributing temperature 980.000000
+Re-distributing temperature 990.000000
+Re-distributing temperature 1000.000000
+Re-distributing temperature 1010.000000
+Re-distributing particles from particle-data/carbon.txt
+
+Finished correlating k values
+
+Calculating probability for temperature 500.000000 
+Calculating probability for temperature 510.000000 
+Calculating probability for temperature 520.000000 
+Calculating probability for temperature 530.000000 
+Calculating probability for temperature 540.000000 
+Calculating probability for temperature 550.000000 
+Calculating probability for temperature 560.000000 
+Calculating probability for temperature 570.000000 
+Calculating probability for temperature 580.000000 
+Calculating probability for temperature 590.000000 
+Calculating probability for temperature 600.000000 
+Calculating probability for temperature 610.000000 
+Calculating probability for temperature 620.000000 
+Calculating probability for temperature 630.000000 
+Calculating probability for temperature 640.000000 
+Calculating probability for temperature 650.000000 
+Calculating probability for temperature 660.000000 
+Calculating probability for temperature 670.000000 
+Calculating probability for temperature 680.000000 
+Calculating probability for temperature 690.000000 
+Calculating probability for temperature 700.000000 
+Calculating probability for temperature 710.000000 
+Calculating probability for temperature 720.000000 
+Calculating probability for temperature 730.000000 
+Calculating probability for temperature 740.000000 
+Calculating probability for temperature 750.000000 
+Calculating probability for temperature 760.000000 
+Calculating probability for temperature 770.000000 
+Calculating probability for temperature 780.000000 
+Calculating probability for temperature 790.000000 
+Calculating probability for temperature 800.000000 
+Calculating probability for temperature 810.000000 
+Calculating probability for temperature 820.000000 
+Calculating probability for temperature 830.000000 
+Calculating probability for temperature 840.000000 
+Calculating probability for temperature 850.000000 
+Calculating probability for temperature 860.000000 
+Calculating probability for temperature 870.000000 
+Calculating probability for temperature 880.000000 
+Calculating probability for temperature 890.000000 
+Calculating probability for temperature 900.000000 
+Calculating probability for temperature 910.000000 
+Calculating probability for temperature 920.000000 
+Calculating probability for temperature 930.000000 
+Calculating probability for temperature 940.000000 
+Calculating probability for temperature 950.000000 
+Calculating probability for temperature 960.000000 
+Calculating probability for temperature 970.000000 
+Calculating probability for temperature 980.000000 
+Calculating probability for temperature 990.000000 
+Calculating probability for temperature 1000.000000 
+Calculating probability for temperature 1010.000000 
+Calculating probability for particles from particle-data/carbon.txt 
+
+Writing down tables
+
+
+Finished writing gas tables
+
+
+Finished writing
+

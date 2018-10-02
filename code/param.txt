@@ -1,0 +1,31 @@
+      integer imax,jmax,kmax,i1,i,j,k,l,m,p_col,p_row,Mx,nx,nr,nt,mt,ipois,px,rank,imx,nTab
+      parameter (p_col=16,p_row=32)
+      parameter (px =p_col*p_row)
+      parameter (imax=190,jmax=192,kmax=192,i1=imax+1)
+      parameter (imx = (imax+2)/p_row -1)
+      
+      integer nTemp
+      parameter(nTemp = 52)
+
+      parameter(ipois = 2)
+
+      parameter (nTab = 2001)
+
+      integer j1,k1,lmax,mmax
+      parameter (j1=(jmax/p_row)+1, k1=(kmax/p_col)+1)
+      parameter (lmax=1,mmax=1)
+
+      real*8 stefan,absco,scatco
+      parameter (stefan=5.670373e-08, absco=1.0, scatco=0.0 )
+
+      real*8 epswest,epseast,rhowest,rhoeast
+
+      parameter (epswest=1.,epseast=1.,rhowest=1.-epswest,rhoeast=1.-epseast)
+
+      real*8, dimension(imax,jmax/p_row,kmax/p_col,lmax,mmax) :: Seff,betaeff
+
+      real*8 c0,c1,c2,c3,c4,c5
+
+      parameter ( c0 = -0.23093, c1 = -1.12390, c2 = 9.41530)
+      parameter ( c3 = -2.99880, c4 = 0.51382, c5 = -1.86840E-05)
+
