@@ -1,23 +1,24 @@
 // NARROWBAND MONTE CARLO OERM GPU
 
 //simulation parameters
-#define  num_gpu 2
-#define  p_row   32 
-#define	 imax	 190  // REMEMBER!!!! imax must be a multiple of Num_streams!!!!! otherwise seg_fault
-#define	 jmax	 192
-#define	 kmax	 192
-#define	 Lx	 2.f
-#define  Ly      6.2831853f
-#define  Lz      12.566371f
+#define  num_gpu 1    //2
+#define  p_row   1    //32 
+#define	 imax	 64   //190  // REMEMBER!!!! imax must be a multiple of Num_streams!!!!! otherwise seg_fault
+#define	 jmax	 64   //192
+#define	 kmax	 64   //192
+#define	 Lx	 1.f  //2.f
+#define  Ly      1.f  //6.2831853f
+#define  Lz      1.f  //12.566371f
 //variance block calculator and photon per block
 #define  nVar 	 3 
-#define	 photmax 5000
+#define	 photmax 20000
 #define  photmaS 1
 
 //number of grid used (maximum 4, triggers preprocessor #if statements)
-#define grid_num 6
+#define grid_num 5 //6 
 
-const int maxi[] = {imax, imax  , imax  , imax/5, imax/5 , imax/10};
+//const int maxi[] = {imax, imax  , imax  , imax/5, imax/5 , imax/10};
+const int maxi[] = {imax, imax/2, imax/4, imax/8, imax/16, imax/32};
 const int maxj[] = {jmax, jmax/2, jmax/4, jmax/8, jmax/16, jmax/32};
 const int maxk[] = {kmax, kmax/2, kmax/4, kmax/8, kmax/16, kmax/32};
 //maximum number of steps in the grids
@@ -36,11 +37,11 @@ const int maxs[] = {5, 5, 5, 5, 5, 100000};
 #endif
 
 //GPU details
-#define num_streams     10
-#define blockdim 		128
-#define nblocks 		32
+#define num_streams     16     //10
+#define blockdim 	128
+#define nblocks 	32
 #define blockdimS       256
-#define nblocksS		128
+#define nblocksS	128
 
 //sorting or not sorting the narrow bands (1 -> yes, other int -> no)
 #define srt 1
@@ -57,8 +58,8 @@ const int maxs[] = {5, 5, 5, 5, 5, 100000};
 #define	 epsb	 1.f
 #define	 epst	 1.f
 
-#define	 Tww	 955 
-#define	 Twe	 573
+#define	 Tww	 500 //955 
+#define	 Twe	 500 //573
 #define	 Tws	 0
 #define	 Twn	 0
 #define	 Twb	 0

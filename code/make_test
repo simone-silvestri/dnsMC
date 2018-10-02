@@ -1,0 +1,37 @@
+
+ #cuda compiler and flags
+NVCC = nvcc
+FLAG1 = -arch 'compute_35' -code 'sm_35' #-maxrregcount 32
+PROF = --ptxas-options=-v  -lineinfo
+FLAG2 = --use_fast_math
+MAT = -ftz=true -prec-div=false
+#CACHE = -Xptxas -dlcm=cg # for caching only in L2
+#PTX = -Xptxas -abi=no #for removing the ABI that consent printf in the stack
+
+# linking libraries and includes for heterogeneous cuda-fortran programming
+CUDA = /opt/cuda-8.0
+INC = -I$(CUDA)/include
+LIB = -L$(CUDA)/lib64 -lcudart -lc -lstdc++ -lcurand #-lcuda
+
+LIBD =   libacml.a
+#COMP  = mpif90 -132 -r8
+COMP  = /opt/openmpi/bin/mpif90 -132 
+EXEC = g++
+FLAGC = -c
+
+turb5:  decomp_2d.o rad_main.o param.txt read_tables.o memory_copy.o spline.o mc_gpu.o param.h NarrowBand.h
+	$(COMP) $(DBGc) $(OPT) rad_main.o  decomp_2d.o io.o read_tables.o memory_copy.o spline.o mc_gpu.o $(LIBD) $(INC) $(LIB) -o volh
+rad_main.o : rad_main.f param.txt
+	$(COMP) $(DBGc) $(FLAGC) $(OPT) rad_main.f 
+spline.o: spline.cpp
+	$(EXEC) $(FLAGC) $(OPT) spline.cpp
+mc_gpu.o: mc_gpu.cu NarrowBand.h param.h
+	$(NVCC) $(DBG) $(OPT) $(MAT) $(PROF) $(PTX) $(FLAG2) $(CACHE)  $(FLAGC) $(OPT) mc_gpu.cu $(FLAG1)
+read_tables.o: read_tables.cpp
+	$(EXEC) $(DBGc)  $(FLAGC) $(OPT) read_tables.cpp
+memory_copy.o: memory_copy.cu
+	$(NVCC) $(DBG) $(OPT) $(MAT) $(PROF) $(PTX) $(FLAG2) $(CACHE)  $(FLAGC) $(OPT) memory_copy.cu $(FLAG1)
+decomp_2d.o: decomp_2d.f90 
+	$(COMP)  -DDOUBLE_PREC -DOVERWRITE -O3  -cpp  -c decomp_2d.f90 io.f90
+clean:
+	rm *.o *.mod

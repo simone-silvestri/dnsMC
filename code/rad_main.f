@@ -15,9 +15,9 @@
       integer imax,jmax,kmax,p_col,p_row 
       integer grid_num
       real Lx,Ly
-      parameter(imax = 192, jmax = 192, kmax = 192)
-      parameter(p_col= 16 , p_row= 32 ) 
-      parameter(Lx= 2.0, Ly= 1.0)
+      parameter(imax = 64, jmax = 64, kmax = 64)
+      parameter(p_col= 1 , p_row= 1 ) 
+      parameter(Lx= 1.0, Ly= 1.0)
       real, parameter :: pi = 3.1415927
       real  Tcore(0:imax+1,0:jmax/p_row+1,0:kmax/p_col+1)
       real  Tpart(0:imax+1,0:jmax/p_row+1,0:kmax/p_col+1)
@@ -30,7 +30,7 @@
       real  Qr(0:imax+1,0:jmax/p_row+1,0:kmax+1)
       real  Vr(0:imax+1,0:jmax/p_row+1,0:kmax+1)
       real  x(0:imax+1),dx,y(0:jmax+1),dy
-      real  Qrm(0:imax+1),Vrm(0:imax+1)
+      real  Qrm(0:imax+1),Vrm(0:imax+1),Vrm2(0:imax+1)
       integer i,j,k,ierr 
       integer istat(mpi_status_size)
       integer result_proc, color, MPI_COMM_NODE
@@ -61,11 +61,7 @@
        write(6,*) xstart(1),xstart(2),xstart(3),xend(1),xend(2),xend(3)
       endif
  
-      dx = Lx/imax
-      x(0) = -dx / 2.0;
-      do i=1,imax+1
-       x(i) = x(i-1) + dx
-      enddo
+      call mkgrid(x,Lx,imax)
       do i=0,imax+1
        do j=1,jmax/p_row
         do k=1,kmax/p_col
@@ -89,24 +85,20 @@
      1                    MPI_SUM, MPI_COMM_WORLD, ierr)
 
       if(node_rank.eq.0) then
+
+      open(unit=1,file='temp.txt')
+      do i=0,imax+1
+       do j=0,jmax+1
+        do k=0,kmax+1
+         write(1,*) i,j,k,T(i,j,k)
+        enddo
+       enddo
+      enddo
+      close(1)
  
       stime1 = MPI_WTIME()
       call MC_GPU(T, xstart(2)) 
-!      stime2 = MPI_WTIME()
 
-!      Qr = 0
-!      write(*,*) 'ciao0'
-!      write(*,*) 'ciao1'
-!      write(*,*) 'ciao2'
-!      write(*,*) 'ciao3'
-!      call sleep(3)
-!      write(*,*) 'ciao4'
-!      write(*,*) 'ciao5'
-!      write(*,*) 'ciao6'
-!      write(*,*) 'ciao7'
-!      write(*,*) 'ciao8'
-    
-!      stime1 = MPI_WTIME()
       call GET_RESULTS(Qr, Vr) 
       stime2 = MPI_WTIME()
 
@@ -155,9 +147,17 @@
         enddo
        enddo
       enddo
+      Vrm2 = 0
+      do i=1,imax
+       do j=1,jmax/p_row
+        do k=1,kmax
+         Vrm2(i) = Vrm2(i) + (Qr(i,j,k) - Qrm(i))**2. / (kmax*jmax/p_row)
+        enddo
+       enddo
+      enddo
       open(unit=1,file='resfortm.txt')
       do i=1,imax
-        write(1,*) x(i),Qrm(i),Vrm(i)
+        write(1,*) x(i),Qrm(i),Vrm(i),Vrm2(i)**(0.5)
       enddo
       close(1)
       endif
@@ -187,28 +187,35 @@
       call mpi_finalize(ierr)
 
       end
-      
-      subroutine mkgrid(x,y,z,im,jm,km)
+
+      subroutine mkgrid(rp,Lx,imax)
       implicit none
-      integer im,jm,km
-      real x(0:im+1)
-      real y(0:jm+1)
-      real z(0:km+1)
-      real dx,dy,dz
-      integer i,j,k
-      
-      x(0) = -dx/2.0
-      y(0) = -dy/2.0
-      z(0) = -dz/2.0
-      do i=1,im+1
-       x(i) = x(i-1) + dx
-      enddo
-      do i=1,jm+1
-       y(i) = y(i-1) + dy
-      enddo
-      do i=1,km+1
-       z(i) = z(i-1) + dz
+      real rmax,Lx,rp(0:imax+1),ru(0:imax),delta(0:imax),dr,x,dx,rnorm
+      integer imax,i
+      dr = Lx/imax
+      rmax = Lx
+      ru(0)=0. 
+      do i=1,imax/2
+          x  = 1.*i/imax
+          dx = 0.5-1.45*(x-0.5)**2.
+          ru(i)=ru(i-1)+dx
+        enddo
+        rnorm = ru(imax/2)
+        do i=1,imax/2
+          ru(i)=Lx/2.*ru(i)/rnorm
+        enddo
+       do i=imax,imax/2+1,-1
+         ru(i)=Lx-ru(imax-i)
+       enddo
+
+      do i=1,imax
+        rp(i)=0.5*(ru(i)+ru(i-1))
+        delta(i)=ru(i)-ru(i-1)
       enddo
 
-      end subroutine
+      rp(0) =-rp(1)
+      rp(imax+1)=ru(imax)+(ru(imax)-rp(imax))
+
+      end 
+
 
