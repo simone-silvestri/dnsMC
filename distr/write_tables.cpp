@@ -316,7 +316,7 @@ void writePbox(PartSpec2 *particles)
 	{
 		fp = fopen(particles->narr_abs[j].file,"wt");
 		fprintf(fp,"%le\t%le\t%le\t%le\t%le \n",particles->narr_abs[j].wv_left,particles->narr_abs[j].wv_right,particles->narr_abs[j].wvc,
-									  particles->narr_abs[j].k_avg,  particles->narr_abs[j].k_avg);
+									  particles->narr_abs[j].k_avg,  particles->narr_sca[j].k_avg);
 		fclose(fp);
 	}
 

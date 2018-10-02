@@ -20,7 +20,7 @@ extern myfloat prob[nT][nB], probg[nT][nB][nQ];
 void readT(NarrowBand *narrBand, myfloat *Tnb, myfloat *kP, myfloat *prob_h, myfloat *probg_h, myfloat Tmax, myfloat *kappamax)
 {
 
-	myfloat dummy,dummy1;
+    myfloat dummy,dummy1;
     //read planck-absorption coefficient
     FILE *fp = fopen("../distr/tables/planck-mean.txt","r");
     for(int i=0; i<nT; i++)
@@ -104,7 +104,7 @@ myfloat I_blackC2( myfloat T, myfloat nu)
 void readT(NarrowBand *narrBand, myfloat *Tnb, myfloat *kP, myfloat *prob_h, myfloat *probg_h, myfloat Tmax, myfloat *kappamax)
 {
 
-    //Planck absorption coefficient is the grey absorption coefficient
+        //Planck absorption coefficient is the grey absorption coefficient
 	for(int i=0; i<nT; i++)
 	{
 		kP[i] = abscoeff;
@@ -181,5 +181,60 @@ void readT(NarrowBand *narrBand, myfloat *Tnb, myfloat *kP, myfloat *prob_h, myf
 		}
 	}
 }
+
+#elif grey==2 
+
+void readT(NarrowBand *narrBand, myfloat *Tnb, myfloat *kP, myfloat *prob_h, myfloat *probg_h, myfloat Tmax, myfloat *kappamax)
+{
+
+    //read planck-absorption coefficient
+    FILE *fp = fopen("tables/particles/planck-mean.txt","r");
+    for(int i=0; i<nT; i++)
+    {
+ 	   fscanf(fp,readf" "reade"\n",&Tnb[i],&kP[i]);
+    }
+    fclose(fp);
+
+    // absorption coefficient at maximum temperature in the system
+    int t = (int) ((Tmax - Tnb[0])/(Tnb[1]-Tnb[0]));
+    *kappamax = (kP[t+1] - kP[t])/(Tnb[t+1]-Tnb[t])*
+   	   	   	   (Tmax - Tnb[t])+kP[t];
+
+    //read tables of narrow-bands and probability
+    char *file[nB];
+    for (int i=0; i<nB; i++)
+    {
+      	   file[i] = (char*)malloc(68*sizeof(char));
+ 	   sprintf(file[i],"../distr/tables/NarrBand%d.txt",i);
+ 	   fp = fopen(file[i],"r");
+ 	   fscanf(fp,reade"\t"reade"\t"reade"\n",&dummy,&dummy,&narrBand[i].wvc);
+ 	   fclose(fp);
+ 	   narrBand[i].idx = i;
+    }
+
+        //write down probability table CK
+        fp = fopen("tables/particles/prob.txt","wt");
+        for (int i=0; i<nT; i++)
+        {
+                for (int j=0; j<particles->totbands; j++)
+                {
+                        fprintf(fp,"%lf \t %-5d \t%30.20le \n",particles->T[i],j,particles->narr_abs[j].cuprob[i]);
+                }
+        }       
+        fclose(fp);
+
+
+        //write down tables of nb-kq;
+        for (int j=0; j < particles->totbands; j++)
+                sprintf(particles->narr_abs[j].file,"tables/particles/NarrBand%d.txt",j);
+                
+        for (int j=0; j < particles->totbands; j++)
+        {
+                fp = fopen(particles->narr_abs[j].file,"wt");
+                fprintf(fp,"%le\t%le\t%le\t%le\t%le \n",particles->narr_abs[j].wv_left,particles->narr_abs[j].wv_right,particles->narr_abs[j].wvc,
+                                                                          particles->narr_abs[j].k_avg,  particles->narr_abs[j].k_avg);
+                fclose(fp);                                               
+        }       
+
 
 #endif
